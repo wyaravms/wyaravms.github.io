@@ -1,0 +1,10 @@
+---
+title: "Home"
+about:
+  template: solana
+  image: profile.jpg
+  image-width: 14em
+  image-shape: round
+---
+
+Hello, this is my personal website!

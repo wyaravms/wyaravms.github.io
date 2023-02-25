@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "Wyara Silva"
+  page-footer: 
+    left: "Website made with [Quarto](https://quarto.org/) by Wyara Silva, 2023" 
+    right:
+      - icon: github
+        href: https://github.com/wyaravms/
+      - icon: twitter
+        href: https://twitter.com/wyaravms
+      - icon: envelope
+        href: mailto:wyaravms@gmail.com  
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - text: Lattes
+        href: http://lattes.cnpq.br/5538303153427476
+        
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    footnotes-hover: true
+
+editor: visual
+
+
+comments:
+  giscus:
+    repo: wyaravms/personal-blog

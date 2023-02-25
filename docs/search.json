@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "Hi, my name is Wyara Silva, I’m a statistician, currently doing my PhD in Statistics at UFMG. I’m addicted to coffee and passionate about cinema.\n\n\n Doctoral Student in Statistics (Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics  (2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics  (2015)\nFederal University of Piauí (UFPI)"
+  },
+  {
+    "objectID": "home.html",
+    "href": "home.html",
+    "title": "Home",
+    "section": "",
+    "text": "Hello, this is my personal website!"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Newton-Raphson’s method for Weibull distribution",
+    "section": "",
+    "text": "Soon I will modify this code to a cleaner one.\n\nrm(list=ls(all=TRUE))\nset.seed(22)\nsetwd(\"C:\\\\Users\\\\Wyara Silva\\\\Meu Drive\\\\disciplina-isolada-ufmg-2022\\\\inferencia-estatistica\\\\trabalho-1\")\n\ndados.f = read.table(\"Dados_Weibull.txt\")\ndados = unlist(dados.f, use.names = FALSE)\n\nlibrary(ggplot2)\n\nggplot(dados.f, aes(x=V1)) + \n  geom_histogram(aes(y=..density..), bins = 30, color=\"black\", fill=\"grey\")+\n  geom_density(alpha=.2, linetype = 2, fill=\"light blue\") +\n  labs(x=\"dados\", y = \"densidade\")\n\n\n\nnewton.raphson.w = function(x.dados, alpha.0=10, precisao = 1e-7, n=100){\n  \n  #primeira e segunda derivada da log-verossimilhança com relação a alpha\n  dlogLikW = function(y){(length(x.dados)/y) + sum(log(x.dados)) - sum(log(x.dados)*(x.dados^y))}\n  ddlogLikW = function(z){-(length(x.dados)/z^2) - sum((log(x.dados)^2)*(x.dados^z))}\n  \n  for (i in 1:n) {\n    #equação de recorrência de newton-raphson\n    alpha.1 = alpha.0 - dlogLikW(alpha.0)/ddlogLikW(alpha.0)\n    \n    #verificar se convergiu\n    if(abs(alpha.1 - alpha.0) < precisao){\n      res = list(alpha.1,i)\n      names(res) = c(\"alpha.estimado\",\"n.iter\")\n      return(res)\n    }\n    \n    #nova iteração\n    alpha.0 = alpha.1\n  }\n  print(\"com o número de iterações não houve convergência\")\n}\n\nnewton.raphson.w(dados)\n\n$alpha.estimado\n[1] 4.965997\n\n$n.iter\n[1] 5\n\n#simulação\nn = c(10,30,100,1000)\n\nestimativas = array(NA, dim=c(1, length(n)))\n\nfor (i in 1:length(n)){\n  #a parametrização da distribuição weibull da função 'rweibull'\n  #é igual a utilizada neste trabalho.\n  dat =  rweibull(n[i], shape=5, scale=1)\n  estimativas[,i] = newton.raphson.w(dat,2)$alpha.estimado\n}\n\nestimativas\n\n         [,1]     [,2]     [,3]   [,4]\n[1,] 5.595741 4.692904 5.088293 5.0562"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Materials from Probability and Inference Courses",
+    "section": "",
+    "text": "Some materials from the isolated disciplines that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)\nProbability:\ntest 1\ntest 2.1\ntest 2.2\nInference:\ntake home"
+  }
+]

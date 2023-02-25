@@ -1,0 +1,23 @@
+---
+title: "Materials from Probability and Inference Courses"
+author: "Wyara Silva"
+date: "2023-02-25"
+categories: [tests]
+linkcolor: darkblue
+---
+
+Some materials from the isolated disciplines that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
+
+Probability:
+
+[test 1](probability_prova_1.pdf)
+
+[test 2.1](probability_prova_2.pdf)
+
+[test 2.2](probability_prova_2_v2.pdf)
+
+Inference:
+
+[take home](inferencia_questao.pdf)
+
+![](board.jpg)

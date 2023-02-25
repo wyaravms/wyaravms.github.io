@@ -1,0 +1,52 @@
+---
+title: "About me"
+format: 
+  html:
+    page-layout: full
+about:
+  template: solana
+  image: profile.jpg
+  image-width: 14em
+  image-shape: round
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:wyaravms@gmail.com  
+    - icon: file
+      text: Lattes
+      href: http://lattes.cnpq.br/5538303153427476
+    - icon: google scholar
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=2kt3OlEAAAAJ&hl=en
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/wyaravms
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/wyaravms/
+    - icon: github
+      text: Github
+      href: https://github.com/wyaravms
+    - icon: film
+      text: Letterboxd
+      href: https://letterboxd.com/wvmouras/
+---
+
+::: {#hero-heading}
+Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee and passionate about cinema.
+
+## Education
+
+<strong> Doctoral Student in Statistics (Current) </strong>\
+Federal University of Minas Gerais (UFMG)
+
+<strong> Master degree in Applied Mathematics and Statistics </strong> (2017)\
+Federal University of Rio Grande do Norte (UFRN)
+
+<strong>Bachelor degree in Statistics </strong> (2015)\
+Federal University of Piauí (UFPI)
+:::
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
