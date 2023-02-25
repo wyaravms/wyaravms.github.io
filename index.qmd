@@ -1,6 +1,6 @@
 ---
 title: "Wyara Silva"
-subtitle: "Hi, this is my personal website. I'm a statistician, and here I will post some works, tests and other things that I did and will do during my academic life"
+subtitle: "Hi, this is my personal website. I'm a statistician, and here I will post some works, tests and other things that I did and will do during my academic life."
 listing:
   contents: posts
   sort: "date desc"

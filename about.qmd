@@ -33,7 +33,7 @@ about:
 ---
 
 ::: {#hero-heading}
-Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee and passionate about cinema.
+Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee, passionate about cinema and also orange belt in karate.
 
 ## Education
 
