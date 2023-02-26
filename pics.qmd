@@ -6,34 +6,34 @@ Pictures I took over the years in some places I've visited
 
 ::: {layout-ncol=2}
 
-![](/photos/inhotim-2.jpg)
+![Adriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG](/photos/inhotim-2.jpg)
 
-![](/photos/desert.jpg)
+![Colorado River, Page, AZ, USA](/photos/desert.jpg)
 
-![](/photos/snow.jpg)
+![University at Albany, Albany, NY, USA](/photos/snow.jpg)
 
-![](/photos/boston.jpg)
-
-
-
-![](/photos/snow-2.jpg)
-
-![](/photos/nyc.jpg)
-
-![](/photos/bambu.jpg)
-
-![](/photos/san-francisco.jpg)
+![MIT, Cambridge, Massachusetts, USA](/photos/boston.jpg)
 
 
 
-![](/photos/mit.jpg)
+![University at Albany, Albany, NY, USA](/photos/snow-2.jpg)
 
-![](/photos/ualbany.jpg)
+![Central Park, New York City, NY, USA](/photos/nyc.jpg)
+
+![Bambu, Inhotim, Brumadinho, MG](/photos/bambu.jpg)
+
+![Golden Gate Bridge, San Francisco, CA, United States](/photos/san-francisco.jpg)
 
 
 
-![](/photos/santa-cruz.jpg)
+![MIT, Cambridge, Massachusetts, USA](/photos/mit.jpg)
 
-![](/photos/amarante.jpg)
+![University at Albany, Albany, NY, USA](/photos/ualbany.jpg)
+
+
+
+![Santa Cruz, Califórnia, USA](/photos/santa-cruz.jpg)
+
+![Amarante, PI](/photos/amarante.jpg)
 :::
 ------------------------------------------------------------------------
