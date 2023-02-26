@@ -4,16 +4,36 @@ title: "Photos"
 
 Pictures I took over the years in some places I've visited
 
+::: {layout-ncol=2}
+
+![](/photos/inhotim-2.jpg)
+
+![](/photos/desert.jpg)
+
+![](/photos/snow.jpg)
+
+![](/photos/boston.jpg)
+
+
+
+![](/photos/snow-2.jpg)
+
+![](/photos/nyc.jpg)
+
 ![](/photos/bambu.jpg)
 
 ![](/photos/san-francisco.jpg)
 
-![](/photos/boston.jpg)
+
 
 ![](/photos/mit.jpg)
+
+![](/photos/ualbany.jpg)
+
+
 
 ![](/photos/santa-cruz.jpg)
 
 ![](/photos/amarante.jpg)
-
+:::
 ------------------------------------------------------------------------
