@@ -6,7 +6,7 @@ format:
 about:
   template: solana
   image: profile.jpg
-  image-width: 14em
+  image-width: 12em
   image-shape: round
   links:
     - icon: envelope
@@ -21,32 +21,28 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/wyaravms
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com/in/wyaravms/
     - icon: github
       text: Github
       href: https://github.com/wyaravms
     - icon: film
       text: Letterboxd
       href: https://letterboxd.com/wvmouras/
+comments: false
 ---
 
 ::: {#hero-heading}
-Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate.
+Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate. Osu.
 
 ## Education
 
-<strong> Doctoral Student in Statistics (Current) </strong>\
+<b> Doctoral Student in Statistics (Current) </b>\
 Federal University of Minas Gerais (UFMG)
 
-<strong> Master degree in Applied Mathematics and Statistics </strong> (2017)\
+<b> Master degree in Applied Mathematics and Statistics </b> (2017)\
 Federal University of Rio Grande do Norte (UFRN)
 
-<strong>Bachelor degree in Statistics </strong> (2015)\
+<b>Bachelor degree in Statistics </b> (2015)\
 Federal University of Piauí (UFPI)
 :::
-
-------------------------------------------------------------------------
 
 ------------------------------------------------------------------------

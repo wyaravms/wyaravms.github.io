@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "Hi, my name is Wyara Silva, I’m a statistician, currently doing my PhD in Statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate.\n\n\n Doctoral Student in Statistics (Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics  (2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics  (2015)\nFederal University of Piauí (UFPI)"
+    "text": "Hi, my name is Wyara Silva, I’m a statistician, currently doing my PhD in Statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu.\n\n\n Doctoral Student in Statistics (Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics  (2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics  (2015)\nFederal University of Piauí (UFPI)"
   },
   {
     "objectID": "home.html",
     "href": "home.html",
-    "title": "Home",
+    "title": "Posts",
     "section": "",
-    "text": "Hello, this is my personal website!"
+    "text": "Newton-Raphson’s method for Weibull distribution\n\n\n\n\n\n\n\nR\n\n\ncode\n\n\nanalysis\n\n\nlatex\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\n  \n\n\n\n\nMaterials from Probability and Inference Courses\n\n\n\n\n\n\n\ntests\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -26,5 +26,26 @@
     "title": "Materials from Probability and Inference Courses",
     "section": "",
     "text": "Some materials from the isolated disciplines that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)\nProbability:\ntest 1\ntest 2.1\ntest 2.2\nInference:\ntake home"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Wyara Silva",
+    "section": "Education",
+    "text": "Education\n Doctoral Student in Statistics (Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics  (2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics  (2015)\nFederal University of Piauí (UFPI)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Wyara Silva",
+    "section": "",
+    "text": "Hi, this is my personal website.   I’m a statistician, and  here  I will post some works, tests and other things that I did and will do during my academic life."
+  },
+  {
+    "objectID": "pics.html",
+    "href": "pics.html",
+    "title": "Photos",
+    "section": "",
+    "text": "Pictures I took over the years in some places I’ve visited"
   }
 ]

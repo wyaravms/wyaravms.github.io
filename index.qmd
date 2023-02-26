@@ -1,15 +1,15 @@
 ---
-title: "Wyara Silva"
-subtitle: "Hi, this is my personal website. I'm a statistician, and here I will post some works, tests and other things that I did and will do during my academic life."
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "<b>Wyara Silva</b>"
+format: 
+  html:
+    page-layout: article
+about:
+  template: solana
+  image: profile.jpg
+  image-width: 10em
+  image-shape: round
+comments: false
 ---
 
-## Posts
+<p style="font-size: 23px;"> Hi, this is my personal website. <br> <br> I'm a statistician, and <a href=home.qmd> here </a> I will post some works, tests and other things that I did and will do during my academic life. </p>
+---

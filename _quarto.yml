@@ -18,10 +18,13 @@ website:
     right:
       - href: index.qmd
         text: Home
+      - href: home.qmd
+        text: Blog
       - about.qmd
       - text: Lattes
         href: http://lattes.cnpq.br/5538303153427476
-        
+      - href: pics.qmd
+        text: Photos
 format:
   html:
     theme: flatly
