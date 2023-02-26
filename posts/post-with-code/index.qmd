@@ -10,14 +10,12 @@ Soon I will modify this code to a cleaner one.
 ```{r}
 rm(list=ls(all=TRUE))
 set.seed(22)
-setwd("C:\\Users\\Wyara Silva\\Meu Drive\\disciplina-isolada-ufmg-2022\\inferencia-estatistica\\trabalho-1")
 
-dados.f = read.table("Dados_Weibull.txt")
-dados = unlist(dados.f, use.names = FALSE)
+dados = readr::read_table("Dados_Weibull.txt", col_names = FALSE)
 
 library(ggplot2)
 
-ggplot(dados.f, aes(x=V1)) + 
+ggplot(dados, aes(x=X1)) + 
   geom_histogram(aes(y=..density..), bins = 30, color="black", fill="grey")+
   geom_density(alpha=.2, linetype = 2, fill="light blue") +
   labs(x="dados", y = "densidade")
@@ -61,3 +59,5 @@ for (i in 1:length(n)){
 
 estimativas
 ```
+
+
