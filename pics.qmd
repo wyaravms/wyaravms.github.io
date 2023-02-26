@@ -4,7 +4,6 @@ title: "Photos"
 
 Pictures I took over the years in some places I've visited
 
-
 ![](/photos/bambu.jpg)
 
 ![](/photos/san-francisco.jpg)
@@ -17,4 +16,4 @@ Pictures I took over the years in some places I've visited
 
 ![](/photos/amarante.jpg)
 
----
+------------------------------------------------------------------------

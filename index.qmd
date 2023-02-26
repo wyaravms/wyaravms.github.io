@@ -11,5 +11,10 @@ about:
 comments: false
 ---
 
-<p style="font-size: 23px;"> Hi, this is my personal website. <br> <br> I'm a statistician, and <a href=home.qmd> here </a> I will post some works, tests and other things that I did and will do during my academic life. </p>
----
+<p style="font-size: 23px;">
+
+Hi, this is my personal website. <br> <br> I'm a statistician, and <a href=home.qmd> here </a> I will post some works, tests and other things that I did and will do during my academic life.
+
+</p>
+
+------------------------------------------------------------------------
