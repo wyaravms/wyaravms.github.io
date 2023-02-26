@@ -20,8 +20,6 @@ website:
         text: Home
       - href: home.qmd
         text: Blog
-      - text: Lattes
-        href: http://lattes.cnpq.br/5538303153427476
       - href: pics.qmd
         text: Photos
       - about.qmd
