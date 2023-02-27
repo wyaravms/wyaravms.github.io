@@ -6,7 +6,7 @@ format:
     linkcolor: "blue"
 author: "Wyara Silva"
 date: "2023-02-25"
-categories: [tests]
+categories: [tests, latex, probability, inference]
 ---
 
 Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
