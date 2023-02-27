@@ -1,12 +1,15 @@
 ---
 title: "Materials from Probability and Inference Courses"
+format: 
+  html:
+    page-layout: article
+    linkcolor: "blue"
 author: "Wyara Silva"
 date: "2023-02-25"
 categories: [tests]
-linkcolor: darkblue
 ---
 
-Some materials from the isolated disciplines that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
+Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
 
 Probability:
 

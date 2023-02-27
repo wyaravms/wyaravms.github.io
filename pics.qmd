@@ -6,7 +6,7 @@ Pictures I took over the years in some places I've visited
 
 ::: {layout-ncol=2}
 
-![Adriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG](/photos/inhotim-2.jpg)
+![Adriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG, Brasil](/photos/inhotim-2.jpg)
 
 ![Colorado River, Page, AZ, USA](/photos/desert.jpg)
 
@@ -20,7 +20,7 @@ Pictures I took over the years in some places I've visited
 
 ![Central Park, New York City, NY, USA](/photos/nyc.jpg)
 
-![Bambu, Inhotim, Brumadinho, MG](/photos/bambu.jpg)
+![Bambu, Inhotim, Brumadinho, MG, Brasil](/photos/bambu.jpg)
 
 ![Golden Gate Bridge, San Francisco, CA, United States](/photos/san-francisco.jpg)
 
@@ -34,6 +34,6 @@ Pictures I took over the years in some places I've visited
 
 ![Santa Cruz, Califórnia, USA](/photos/santa-cruz.jpg)
 
-![Amarante, PI](/photos/amarante.jpg)
+![Amarante, PI, Brasil](/photos/amarante.jpg)
 :::
 ------------------------------------------------------------------------
