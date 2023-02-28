@@ -2,7 +2,7 @@
 title: "About me"
 format: 
   html:
-    page-layout: article
+    page-layout: full
 about:
   template: solana
   image: profile.jpg

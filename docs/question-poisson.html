@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wyara Silva - Posts</title>
+<title>Wyara Silva - question-poisson</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,42 +58,12 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./home.html" aria-current="page">
+    <a class="nav-link" href="./home.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -134,179 +102,52 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Posts</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="central limit theorem">central limit theorem <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="inference">inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="latex">latex <span class="quarto-category-count">(1)</span></div><div class="category" data-category="poisson">poisson <span class="quarto-category-count">(1)</span></div><div class="category" data-category="probability">probability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tests">tests <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">question-poisson</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="latex-environments" class="level2">
+<h2 class="anchored" data-anchor-id="latex-environments">LaTeX Environments</h2>
+<div class="center">
+<p>The contents of this div will be output in a <code>center</code> LaTeX environment, but will appear in HTML (and any other output format as a simple div with the class <code>center</code>)</p>
+</div>
+</section>
+<section id="latex-commands" class="level2">
+<h2 class="anchored" data-anchor-id="latex-commands">LaTeX Commands</h2>
+<p>Will replace spans of class <code>ce</code> with the <code>\ce{}</code> command for LaTeX output, but leave the spans intact for HTML output. So <code>[H2SO4]{.ce}</code> becomes <span class="ce">H2SO4</span>.</p>
+</section>
+<section id="advanced-environments-and-commands" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-environments-and-commands">Advanced Environments and Commands</h2>
+<p>You can also combine environments and commands (with options) to address more complex scenarios.</p>
+<p>Both environments and commands can accept an <code>options</code> attribute which will be properly applied in LaTeX and will be available as an attribute in HTML output.</p>
+<div class="enumerate">
+<p>Question 1 Question 2</p>
+</div>
 
 
+</section>
 
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="probability,central limit theorem,poisson" data-listing-date-sort="1677553200000" data-listing-file-modified-sort="1677586032826" data-listing-reading-time-sort="0.055">
-<div class="thumbnail">
-<a href="./posts/central limit theorem/question-poisson.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/central limit theorem/question-poisson.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/central limit theorem/question-poisson.html">
-<h3 class="no-anchor listing-title">
-Central Limit Theorem
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('central limit theorem'); return false;">
-central limit theorem
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('poisson'); return false;">
-poisson
-</div>
-</div>
-<a href="./posts/central limit theorem/question-poisson.html">
-<div class="listing-description">
-Use the central limit theorem to verify that,
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/central limit theorem/question-poisson.html">
-<div class="listing-date">
-Feb 28, 2023
-</div>
-<div class="listing-author">
-Wyara Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="R,code,analysis" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1677519133444" data-listing-reading-time-sort="0.78">
-<div class="thumbnail">
-<a href="./posts/post-with-code/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/post-with-code/index.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code/index.html">
-<h3 class="no-anchor listing-title">
-Newton-Raphson’s method for Weibull distribution
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post-with-code/index.html">
-<div class="listing-description">
-Soon I will modify this code to a cleaner one.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html">
-<div class="listing-date">
-Feb 25, 2023
-</div>
-<div class="listing-author">
-Wyara Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="tests,latex,probability,inference" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1677519146770" data-listing-reading-time-sort="0.145">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/board.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Materials from Probability and Inference Courses
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('tests'); return false;">
-tests
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('latex'); return false;">
-latex
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('inference'); return false;">
-inference
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-Feb 25, 2023
-</div>
-<div class="listing-author">
-Wyara Silva
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

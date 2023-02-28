@@ -1,0 +1,16 @@
+---
+title: "Central Limit Theorem"
+format:
+  html:
+    html-math-method: mathjax
+author: "Wyara Silva"
+date: "2023-02-28"
+categories: [probability, central limit theorem, poisson]
+---
+
+Use the central limit theorem to verify that,
+
+$$\lim_{n\xrightarrow[]{}\infty}= e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} = 1.$$
+
+Answer:
+

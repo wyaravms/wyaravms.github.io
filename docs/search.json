@@ -11,7 +11,7 @@
     "href": "home.html",
     "title": "Posts",
     "section": "",
-    "text": "Newton-Raphson’s method for Weibull distribution\n\n\n\n\n\n\n\nR\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\n  \n\n\n\n\nMaterials from Probability and Inference Courses\n\n\n\n\n\n\n\ntests\n\n\nlatex\n\n\nprobability\n\n\ninference\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\nNo matching items"
+    "text": "Central Limit Theorem\n\n\n\n\n\n\n\nprobability\n\n\ncentral limit theorem\n\n\npoisson\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2023\n\n\nWyara Silva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNewton-Raphson’s method for Weibull distribution\n\n\n\n\n\n\n\nR\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\n  \n\n\n\n\nMaterials from Probability and Inference Courses\n\n\n\n\n\n\n\ntests\n\n\nlatex\n\n\nprobability\n\n\ninference\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2023\n\n\nWyara Silva\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -47,5 +47,33 @@
     "title": "Photos",
     "section": "",
     "text": "Pictures I took over the years in some places I’ve visited\n\n\n\n\n\n\nAdriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG, Brasil\n\n\n\n\n\n\n\nColorado River, Page, AZ, USA\n\n\n\n\n\n\n\n\n\nUniversity at Albany, Albany, NY, USA\n\n\n\n\n\n\n\nMIT, Cambridge, Massachusetts, USA\n\n\n\n\n\n\n\n\n\nUniversity at Albany, Albany, NY, USA\n\n\n\n\n\n\n\nCentral Park, New York City, NY, USA\n\n\n\n\n\n\n\n\n\nBambu, Inhotim, Brumadinho, MG, Brasil\n\n\n\n\n\n\n\nGolden Gate Bridge, San Francisco, CA, United States\n\n\n\n\n\n\n\n\n\nMIT, Cambridge, Massachusetts, USA\n\n\n\n\n\n\n\nUniversity at Albany, Albany, NY, USA\n\n\n\n\n\n\n\n\n\nSanta Cruz, Califórnia, USA\n\n\n\n\n\n\n\nAmarante, PI, Brasil"
+  },
+  {
+    "objectID": "posts/central limit theorem/question-poisson.html",
+    "href": "posts/central limit theorem/question-poisson.html",
+    "title": "Central Limit Theorem",
+    "section": "",
+    "text": "Use the central limit theorem to verify that,\n\\[\\lim_{n\\xrightarrow[]{}\\infty}= e^{-n}\\displaystyle\\sum^{n}_{k=0}\\dfrac{2n^{k}}{k!} = 1.\\]\nAnswer:"
+  },
+  {
+    "objectID": "question-poisson.html",
+    "href": "question-poisson.html",
+    "title": "question-poisson",
+    "section": "",
+    "text": "The contents of this div will be output in a center LaTeX environment, but will appear in HTML (and any other output format as a simple div with the class center)"
+  },
+  {
+    "objectID": "question-poisson.html#latex-commands",
+    "href": "question-poisson.html#latex-commands",
+    "title": "question-poisson",
+    "section": "LaTeX Commands",
+    "text": "LaTeX Commands\nWill replace spans of class ce with the \\ce{} command for LaTeX output, but leave the spans intact for HTML output. So [H2SO4]{.ce} becomes H2SO4."
+  },
+  {
+    "objectID": "question-poisson.html#advanced-environments-and-commands",
+    "href": "question-poisson.html#advanced-environments-and-commands",
+    "title": "question-poisson",
+    "section": "Advanced Environments and Commands",
+    "text": "Advanced Environments and Commands\nYou can also combine environments and commands (with options) to address more complex scenarios.\nBoth environments and commands can accept an options attribute which will be properly applied in LaTeX and will be available as an attribute in HTML output.\n\nQuestion 1 Question 2"
   }
 ]
