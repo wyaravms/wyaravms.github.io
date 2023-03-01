@@ -31,11 +31,15 @@ website:
 
 format:
   html: 
+    smooth-scroll: true
     theme: cosmo
     css: styles.css
+    link-external-icon: false
+    link-external-newwindow: true
     footnotes-hover: true
     toc: true
-    include-after-body: ../footer.html
+    toc-depth: 3
+    code-link: true
 
 editor: visual
 

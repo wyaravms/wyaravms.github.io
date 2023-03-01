@@ -57,6 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -142,13 +143,14 @@ ul.task-list li input[type="checkbox"] {
   </a>
 </div>
       <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hi, my name is Wyara Silva, I’m a statistician, currently doing my PhD in Statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu.</p>
+<p>Hi, my name is Wyara Silva, I’m a statistician, and this year I will start my doctorate in statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu.</p>
 <section id="education" class="level2">
 <h2 data-anchor-id="education">Education</h2>
 <p><b> Doctoral Student in Statistics (2023-Current) </b><br>
 Federal University of Minas Gerais (UFMG)</p>
-<p><b> Master degree in Applied Mathematics and Statistics (2015-2017)</b> &nbsp; Federal University of Rio Grande do Norte (UFRN)</p>
-<p><b>Bachelor degree in Statistics (2010-2015)</b> &nbsp;<br>
+<p><b> Master degree in Applied Mathematics and Statistics (2015-2017)</b><br>
+Federal University of Rio Grande do Norte (UFRN)</p>
+<p><b>Bachelor degree in Statistics (2010-2015)</b><br>
 Federal University of Piauí (UFPI)</p>
 </section>
 <section id="published-papers" class="level2">
@@ -292,6 +294,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/wyaravms\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
@@ -325,4 +341,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -3,6 +3,7 @@ title: "Newton-Raphson's method for Weibull distribution"
 author: "Wyara Silva"
 date: "2023-02-25"
 categories: [R, code, analysis]
+title-block-banner: true
 ---
 
 Soon I will modify this code to a cleaner one.
@@ -52,5 +53,3 @@ for (i in 1:length(n)){
 
 estimativas
 ```
-
-
