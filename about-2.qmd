@@ -27,7 +27,7 @@ Federal University of Piauí (UFPI)
 
 ## Published papers
 
-<b>Moura E Silva, W. V.</b>; Ramírez Orozco, D. L. (2022). [Evaluación de rendimiento de los estimadores para los parámetros de la Distribución Burr XII. Comunicaciones En Estadística](https://dialnet.unirioja.es/servlet/articulo?codigo=8710099), v. 15, p. 1-14.
+<b>Moura E Silva, Wyara Vanesa</b>; Ramírez Orozco, Daniel Leonardo (2022). [Evaluación de rendimiento de los estimadores para los parámetros de la Distribución Burr XII. Comunicaciones En Estadística](https://dialnet.unirioja.es/servlet/articulo?codigo=8710099), v. 15, p. 1-14.
 
 <b>Silva, Wyara Vanesa Moura E</b>; Nascimento, Fernando Ferraz Do; Bourguingnon, Marcelo (2020). [A change-point model for the r-largest order statistics with applications to environmental and financial data](https://doi.org/10.1016/j.apm.2020.01.064), Applied Mathematical Modelling, Volume 82, Pages 666-679, ISSN 0307-904X.
 
