@@ -1,10 +1,24 @@
 project:
   type: website
   output-dir: docs
+  
+execute:
+  freeze: auto
 
 website:
-  page-navigation: true
   title: "Wyara Silva"
+  page-navigation: true
+  site-url: https://wyaravms.github.io/
+  navbar:
+    background: "#25384d"
+    right:
+      - href: index.qmd
+        text: Home
+      - href: home.qmd
+        text: Blog
+      - href: pics.qmd
+        text: Photos
+      - about.qmd
   page-footer: 
     left: "Website made with [Quarto](https://quarto.org/) by Wyara Silva, 2023" 
     right:
@@ -14,23 +28,15 @@ website:
         href: https://twitter.com/wyaravms
       - icon: envelope
         href: mailto:wyaravms@gmail.com  
-  navbar:
-    right:
-      - href: index.qmd
-        text: Home
-      - href: home.qmd
-        text: Blog
-      - href: pics.qmd
-        text: Photos
-      - about.qmd
+
 format:
-  html:
-    theme: flatly
+  html: 
+    theme: cosmo
     css: styles.css
     footnotes-hover: true
+    toc: true
 
 editor: visual
-
 
 comments:
   giscus:

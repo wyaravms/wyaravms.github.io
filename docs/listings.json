@@ -13,5 +13,17 @@
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/about.html",
+    "items": [
+      "/index.html",
+      "/posts/central limit theorem/question-poisson.html",
+      "/posts/welcome/index.html",
+      "/posts/post-with-code/index.html",
+      "/pics.html",
+      "/home.html",
+      "/question-poisson.html"
+    ]
   }
 ]

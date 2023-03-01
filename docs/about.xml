@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Wyara Silva</title>
+<link>https://wyaravms.github.io/about.html</link>
+<atom:link href="https://wyaravms.github.io/about.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.2.335</generator>
+<lastBuildDate>Tue, 28 Feb 2023 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Central Limit Theorem (Question)</title>
+  <dc:creator>Wyara Silva</dc:creator>
+  <link>https://wyaravms.github.io/posts/central limit theorem/question-poisson.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Use the central limit theorem to verify that,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Clim_%7Bn%5Cxrightarrow%5B%5D%7B%7D%5Cinfty%7D=%20e%5E%7B-n%7D%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bk=0%7D%5Cdfrac%7B2n%5E%7Bk%7D%7D%7Bk!%7D%20=%201."></p>
+<p>Answer:</p>
+
+
+
+ ]]></description>
+  <category>probability</category>
+  <category>central limit theorem</category>
+  <category>poisson</category>
+  <guid>https://wyaravms.github.io/posts/central limit theorem/question-poisson.html</guid>
+  <pubDate>Tue, 28 Feb 2023 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Materials from Probability and Inference Courses</title>
+  <dc:creator>Wyara Silva</dc:creator>
+  <link>https://wyaravms.github.io/posts/welcome/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)</p>
+<p>Probability:</p>
+<p><a href="probability_prova_1.pdf">test 1</a></p>
+<p><a href="probability_prova_2.pdf">test 2.1</a></p>
+<p><a href="probability_prova_2_v2.pdf">test 2.2</a></p>
+<p>Inference:</p>
+<p><a href="inferencia_questao.pdf">take home</a></p>
+<p><img src="https://wyaravms.github.io/posts/welcome/board.jpg" class="img-fluid"></p>
+
+
+
+ ]]></description>
+  <category>tests</category>
+  <category>latex</category>
+  <category>probability</category>
+  <category>inference</category>
+  <guid>https://wyaravms.github.io/posts/welcome/index.html</guid>
+  <pubDate>Sat, 25 Feb 2023 03:00:00 GMT</pubDate>
+  <media:content url="https://wyaravms.github.io/posts/welcome/board.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Newton-Raphson’s method for Weibull distribution</title>
+  <dc:creator>Wyara Silva</dc:creator>
+  <link>https://wyaravms.github.io/posts/post-with-code/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Soon I will modify this code to a cleaner one.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">rm</span>(<span class="at" style="color: #657422;">list=</span><span class="fu" style="color: #4758AB;">ls</span>(<span class="at" style="color: #657422;">all=</span><span class="cn" style="color: #8f5902;">TRUE</span>))</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">set.seed</span>(<span class="dv" style="color: #AD0000;">22</span>)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(ggplot2)</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">dados <span class="ot" style="color: #003B4F;">=</span> readr<span class="sc" style="color: #5E5E5E;">::</span><span class="fu" style="color: #4758AB;">read_table</span>(<span class="st" style="color: #20794D;">"Dados_Weibull.txt"</span>, <span class="at" style="color: #657422;">col_names =</span> <span class="cn" style="color: #8f5902;">FALSE</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+── Column specification ────────────────────────────────────────────────────────
+cols(
+  X1 = col_double()
+)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;">ggplot</span>(dados, <span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">x=</span>X1)) <span class="sc" style="color: #5E5E5E;">+</span> </span>
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="fu" style="color: #4758AB;">aes</span>(<span class="at" style="color: #657422;">y=</span>..density..), <span class="at" style="color: #657422;">bins =</span> <span class="dv" style="color: #AD0000;">30</span>, <span class="at" style="color: #657422;">color=</span><span class="st" style="color: #20794D;">"black"</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"grey"</span>)<span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;">geom_density</span>(<span class="at" style="color: #657422;">alpha=</span>.<span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">linetype =</span> <span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">fill=</span><span class="st" style="color: #20794D;">"light blue"</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;">labs</span>(<span class="at" style="color: #657422;">x=</span><span class="st" style="color: #20794D;">"dados"</span>, <span class="at" style="color: #657422;">y =</span> <span class="st" style="color: #20794D;">"densidade"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://wyaravms.github.io/posts/post-with-code/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">newton.raphson.w <span class="ot" style="color: #003B4F;">=</span> <span class="cf" style="color: #003B4F;">function</span>(x.dados, <span class="at" style="color: #657422;">alpha.0=</span><span class="dv" style="color: #AD0000;">10</span>, <span class="at" style="color: #657422;">precisao =</span> <span class="fl" style="color: #AD0000;">1e-7</span>, <span class="at" style="color: #657422;">n=</span><span class="dv" style="color: #AD0000;">100</span>){</span>
+<span id="cb4-2">  </span>
+<span id="cb4-3">  dlogLikW <span class="ot" style="color: #003B4F;">=</span> <span class="cf" style="color: #003B4F;">function</span>(y){(<span class="fu" style="color: #4758AB;">length</span>(x.dados)<span class="sc" style="color: #5E5E5E;">/</span>y) <span class="sc" style="color: #5E5E5E;">+</span> <span class="fu" style="color: #4758AB;">sum</span>(<span class="fu" style="color: #4758AB;">log</span>(x.dados)) <span class="sc" style="color: #5E5E5E;">-</span> <span class="fu" style="color: #4758AB;">sum</span>(<span class="fu" style="color: #4758AB;">log</span>(x.dados)<span class="sc" style="color: #5E5E5E;">*</span>(x.dados<span class="sc" style="color: #5E5E5E;">^</span>y))}</span>
+<span id="cb4-4">  ddlogLikW <span class="ot" style="color: #003B4F;">=</span> <span class="cf" style="color: #003B4F;">function</span>(z){<span class="sc" style="color: #5E5E5E;">-</span>(<span class="fu" style="color: #4758AB;">length</span>(x.dados)<span class="sc" style="color: #5E5E5E;">/</span>z<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span>) <span class="sc" style="color: #5E5E5E;">-</span> <span class="fu" style="color: #4758AB;">sum</span>((<span class="fu" style="color: #4758AB;">log</span>(x.dados)<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span>)<span class="sc" style="color: #5E5E5E;">*</span>(x.dados<span class="sc" style="color: #5E5E5E;">^</span>z))}</span>
+<span id="cb4-5">  </span>
+<span id="cb4-6">  <span class="cf" style="color: #003B4F;">for</span> (i <span class="cf" style="color: #003B4F;">in</span> <span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span>n) {</span>
+<span id="cb4-7">    alpha<span class="fl" style="color: #AD0000;">.1</span> <span class="ot" style="color: #003B4F;">=</span> alpha<span class="fl" style="color: #AD0000;">.0</span> <span class="sc" style="color: #5E5E5E;">-</span> <span class="fu" style="color: #4758AB;">dlogLikW</span>(alpha<span class="fl" style="color: #AD0000;">.0</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">ddlogLikW</span>(alpha<span class="fl" style="color: #AD0000;">.0</span>)</span>
+<span id="cb4-8">    </span>
+<span id="cb4-9">    <span class="cf" style="color: #003B4F;">if</span>(<span class="fu" style="color: #4758AB;">abs</span>(alpha<span class="fl" style="color: #AD0000;">.1</span> <span class="sc" style="color: #5E5E5E;">-</span> alpha<span class="fl" style="color: #AD0000;">.0</span>) <span class="sc" style="color: #5E5E5E;">&lt;</span> precisao){</span>
+<span id="cb4-10">      res <span class="ot" style="color: #003B4F;">=</span> <span class="fu" style="color: #4758AB;">list</span>(alpha<span class="fl" style="color: #AD0000;">.1</span>,i)</span>
+<span id="cb4-11">      <span class="fu" style="color: #4758AB;">names</span>(res) <span class="ot" style="color: #003B4F;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">"alpha.estimado"</span>,<span class="st" style="color: #20794D;">"n.iter"</span>)</span>
+<span id="cb4-12">      <span class="fu" style="color: #4758AB;">return</span>(res)</span>
+<span id="cb4-13">    }</span>
+<span id="cb4-14">    </span>
+<span id="cb4-15">    alpha<span class="fl" style="color: #AD0000;">.0</span> <span class="ot" style="color: #003B4F;">=</span> alpha<span class="fl" style="color: #AD0000;">.1</span></span>
+<span id="cb4-16">  }</span>
+<span id="cb4-17">  <span class="fu" style="color: #4758AB;">print</span>(<span class="st" style="color: #20794D;">"com o número de iterações não houve convergência"</span>)</span>
+<span id="cb4-18">}</span>
+<span id="cb4-19"></span>
+<span id="cb4-20"><span class="fu" style="color: #4758AB;">newton.raphson.w</span>(dados)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$alpha.estimado
+[1] -0.3384617
+
+$n.iter
+[1] 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="co" style="color: #5E5E5E;">#simulation</span></span>
+<span id="cb6-2">n <span class="ot" style="color: #003B4F;">=</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">10</span>,<span class="dv" style="color: #AD0000;">30</span>,<span class="dv" style="color: #AD0000;">100</span>,<span class="dv" style="color: #AD0000;">1000</span>)</span>
+<span id="cb6-3"></span>
+<span id="cb6-4">estimativas <span class="ot" style="color: #003B4F;">=</span> <span class="fu" style="color: #4758AB;">array</span>(<span class="cn" style="color: #8f5902;">NA</span>, <span class="at" style="color: #657422;">dim=</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span>, <span class="fu" style="color: #4758AB;">length</span>(n)))</span>
+<span id="cb6-5"></span>
+<span id="cb6-6"><span class="cf" style="color: #003B4F;">for</span> (i <span class="cf" style="color: #003B4F;">in</span> <span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="fu" style="color: #4758AB;">length</span>(n)){</span>
+<span id="cb6-7">  dat <span class="ot" style="color: #003B4F;">=</span>  <span class="fu" style="color: #4758AB;">rweibull</span>(n[i], <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">5</span>, <span class="at" style="color: #657422;">scale=</span><span class="dv" style="color: #AD0000;">1</span>)</span>
+<span id="cb6-8">  estimativas[,i] <span class="ot" style="color: #003B4F;">=</span> <span class="fu" style="color: #4758AB;">newton.raphson.w</span>(dat,<span class="dv" style="color: #AD0000;">2</span>)<span class="sc" style="color: #5E5E5E;">$</span>alpha.estimado</span>
+<span id="cb6-9">}</span>
+<span id="cb6-10"></span>
+<span id="cb6-11">estimativas</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         [,1]     [,2]     [,3]   [,4]
+[1,] 5.595741 4.692904 5.088293 5.0562</code></pre>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>R</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://wyaravms.github.io/posts/post-with-code/index.html</guid>
+  <pubDate>Sat, 25 Feb 2023 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Wyara Silva</title>
+  <link>https://wyaravms.github.io/index.html</link>
+  <description><![CDATA[ 
+<p style="font-size: 23px;">
+</p><p>Hi, this is my personal website. <br> <br> I’m a statistician, and <a href="./home.html"> here </a> I will post some notes, tests and other things that I did and I will do during my academic life. Some information about me can be found <a href="./about.html">here</a>.</p>
+<p></p>
+<hr>
+
+
+ ]]></description>
+  <guid>https://wyaravms.github.io/index.html</guid>
+  <pubDate>Tue, 28 Feb 2023 23:14:23 GMT</pubDate>
+</item>
+<item>
+  <title>Photos</title>
+  <link>https://wyaravms.github.io/pics.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Pictures I took over the years in some places I’ve visited</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/inhotim-2.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Adriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG, Brasil</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/desert.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Colorado River, Page, AZ, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/snow.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">University at Albany, Albany, NY, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/boston.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MIT, Cambridge, Massachusetts, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/snow-2.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">University at Albany, Albany, NY, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/nyc.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Central Park, New York City, NY, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/bambu.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Bambu, Inhotim, Brumadinho, MG, Brasil</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/san-francisco.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Golden Gate Bridge, San Francisco, CA, United States</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/mit.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MIT, Cambridge, Massachusetts, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/ualbany.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">University at Albany, Albany, NY, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/santa-cruz.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Santa Cruz, Califórnia, USA</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://wyaravms.github.io/photos/amarante.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Amarante, PI, Brasil</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<hr>
+
+
+
+ ]]></description>
+  <guid>https://wyaravms.github.io/pics.html</guid>
+  <pubDate>Tue, 28 Feb 2023 23:14:23 GMT</pubDate>
+  <media:content url="https://wyaravms.github.io/photos/inhotim-2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Posts</title>
+  <link>https://wyaravms.github.io/home.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="probability,central limit theorem,poisson" data-listing-date-sort="1677553200000" data-listing-file-modified-sort="1677591427120" data-listing-reading-time-sort="0.055">
+<div class="thumbnail">
+<a href="./posts/central limit theorem/question-poisson.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/central limit theorem/question-poisson.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/central limit theorem/question-poisson.html">
+<h3 class="no-anchor listing-title">
+Central Limit Theorem (Question)
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
+probability
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('central limit theorem'); return false;">
+central limit theorem
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('poisson'); return false;">
+poisson
+</div>
+</div>
+<a href="./posts/central limit theorem/question-poisson.html">
+<div class="listing-description">
+Use the central limit theorem to verify that,
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/central limit theorem/question-poisson.html">
+<div class="listing-date">
+Feb 28, 2023
+</div>
+<div class="listing-author">
+Wyara Silva
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="R,code,analysis" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1677519133444" data-listing-reading-time-sort="0.78">
+<div class="thumbnail">
+<a href="./posts/post-with-code/index.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/post-with-code/index.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/post-with-code/index.html">
+<h3 class="no-anchor listing-title">
+Newton-Raphson’s method for Weibull distribution
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
+analysis
+</div>
+</div>
+<a href="./posts/post-with-code/index.html">
+<div class="listing-description">
+Soon I will modify this code to a cleaner one.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/post-with-code/index.html">
+<div class="listing-date">
+Feb 25, 2023
+</div>
+<div class="listing-author">
+Wyara Silva
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="tests,latex,probability,inference" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1677624575924" data-listing-reading-time-sort="0.145">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html"> <img src="https://wyaravms.github.io/posts/welcome/board.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/welcome/index.html">
+<h3 class="no-anchor listing-title">
+Materials from Probability and Inference Courses
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tests'); return false;">
+tests
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('latex'); return false;">
+latex
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
+probability
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('inference'); return false;">
+inference
+</div>
+</div>
+<a href="./posts/welcome/index.html">
+<div class="listing-description">
+Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html">
+<div class="listing-date">
+Feb 25, 2023
+</div>
+<div class="listing-author">
+Wyara Silva
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div> ]]></description>
+  <guid>https://wyaravms.github.io/home.html</guid>
+  <pubDate>Tue, 28 Feb 2023 23:14:23 GMT</pubDate>
+</item>
+<item>
+  <title>question-poisson</title>
+  <link>https://wyaravms.github.io/question-poisson.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="latex-environments" class="level2">
+<h2 class="anchored" data-anchor-id="latex-environments">LaTeX Environments</h2>
+<div class="center">
+<p>The contents of this div will be output in a <code>center</code> LaTeX environment, but will appear in HTML (and any other output format as a simple div with the class <code>center</code>)</p>
+</div>
+</section>
+<section id="latex-commands" class="level2">
+<h2 class="anchored" data-anchor-id="latex-commands">LaTeX Commands</h2>
+<p>Will replace spans of class <code>ce</code> with the <code>\ce{}</code> command for LaTeX output, but leave the spans intact for HTML output. So <code>[H2SO4]{.ce}</code> becomes <span class="ce">H2SO4</span>.</p>
+</section>
+<section id="advanced-environments-and-commands" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-environments-and-commands">Advanced Environments and Commands</h2>
+<p>You can also combine environments and commands (with options) to address more complex scenarios.</p>
+<p>Both environments and commands can accept an <code>options</code> attribute which will be properly applied in LaTeX and will be available as an attribute in HTML output.</p>
+<div class="enumerate">
+<p>Question 1 Question 2</p>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://wyaravms.github.io/question-poisson.html</guid>
+  <pubDate>Tue, 28 Feb 2023 23:14:23 GMT</pubDate>
+</item>
+</channel>
+</rss>

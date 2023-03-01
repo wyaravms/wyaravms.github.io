@@ -1,5 +1,5 @@
 ---
-title: "Central Limit Theorem"
+title: "Central Limit Theorem (Question)"
 format:
   html:
     html-math-method: mathjax
