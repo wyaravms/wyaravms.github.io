@@ -10,7 +10,7 @@ website:
   page-navigation: true
   site-url: https://wyaravms.github.io/
   navbar:
-    background: "#25384d"
+    background: "#476C73"
     right:
       - href: index.qmd
         text: Home
@@ -45,4 +45,4 @@ editor: visual
 
 comments:
   giscus:
-    repo: wyaravms/personal-blog
+    repo: wyaravms/wyaravms.github.io

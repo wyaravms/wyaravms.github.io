@@ -3,7 +3,6 @@ title: "<b>Wyara Silva</b>"
 format: 
   html:
     page-layout: article
-    toc: true
 about:
   template: solana
   image: profile.jpg
