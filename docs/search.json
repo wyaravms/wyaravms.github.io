@@ -53,7 +53,7 @@
     "href": "posts/central limit theorem/question-poisson.html",
     "title": "Central Limit Theorem (Question)",
     "section": "",
-    "text": "Use the central limit theorem to verify that,\n\\[\\lim_{n\\xrightarrow[]{}\\infty}= e^{-n}\\displaystyle\\sum^{n}_{k=0}\\dfrac{2n^{k}}{k!} = 1.\\]\nAnswer:"
+    "text": "Use the central limit theorem to verify that,\n\\[\\lim_{n\\xrightarrow[]{}\\infty}= e^{-n}\\displaystyle\\sum^{n}_{k=0}\\dfrac{2n^{k}}{k!} = 1.\\]"
   },
   {
     "objectID": "question-poisson.html",

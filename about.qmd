@@ -1,6 +1,5 @@
 ---
 title: "About me"
-
 about:
   template: solana
   image: profile.jpg
@@ -28,11 +27,9 @@ about:
 comments: false
 ---
 
-::: {#hero-heading}
 
 Hi, my name is Wyara Silva, I'm a statistician, currently doing my PhD in Statistics at UFMG. I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate. Osu.
 
-:::
 
 ## Education
 
@@ -57,6 +54,5 @@ Federal University of Piauí (UFPI)
 Ferraz Do Nascimento, Fernando; <b>Moura E Silva, Wyara Vanesa</b> (2017) [A Bayesian model for multiple change point to extremes, with application to environmental and financial data](https://doi.org/10.1080/02664763.2016.1254733), Journal of Applied Statistics, 44:13, 2410-2426.
 
 ## Experience
-
 
 ------------------------------------------------------------------------

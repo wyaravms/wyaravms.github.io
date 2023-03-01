@@ -35,6 +35,7 @@ format:
     css: styles.css
     footnotes-hover: true
     toc: true
+    include-after-body: ../footer.html
 
 editor: visual
 
