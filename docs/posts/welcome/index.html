@@ -60,6 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -142,7 +143,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#probability" id="toc-probability" class="nav-link active" data-scroll-target="#probability">Probability:</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">Inference:</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -151,15 +159,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)</p>
-<p>Probability:</p>
+<section id="probability" class="level3">
+<h3 class="anchored" data-anchor-id="probability">Probability:</h3>
 <p><a href="probability_prova_1.pdf">Test 1</a></p>
 <p><a href="probability_prova_2.pdf">Test 2.1</a></p>
 <p><a href="probability_prova_2_v2.pdf">Test 2.2</a></p>
-<p>Inference:</p>
+</section>
+<section id="inference" class="level3">
+<h3 class="anchored" data-anchor-id="inference">Inference:</h3>
 <p><a href="inferencia_questao.pdf">Take home</a></p>
 <p><img src="board.jpg" class="img-fluid"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -293,9 +305,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/wyaravms\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="wyaravms/personal-blog" data-repo-id="R_kgDOJCMmtQ" data-category="General" data-category-id="DIC_kwDOJCMmtc4CUc5J" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js" data-repo="wyaravms/wyaravms.github.io" data-repo-id="R_kgDOJCe7lg" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">
@@ -328,4 +354,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

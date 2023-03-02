@@ -12,7 +12,7 @@ title-block-banner: true
 
 Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
 
-Probability:
+### Probability:
 
 [Test 1](probability_prova_1.pdf)
 
@@ -20,7 +20,7 @@ Probability:
 
 [Test 2.2](probability_prova_2_v2.pdf)
 
-Inference:
+### Inference:
 
 [Take home](inferencia_questao.pdf)
 

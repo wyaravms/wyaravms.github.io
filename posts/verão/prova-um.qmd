@@ -1,0 +1,229 @@
+---
+title: "Summer 2023"
+title-block-banner: true
+format:
+  html:
+    page-layout: article
+    linkcolor: "blue"
+    html-math-method: mathjax
+author: "Wyara Silva"
+date: "2023-03-02"
+categories: [probability, tests]
+---
+
+
+This summer, I attended [The Summer Program in Mathematics, UFMG 2023](https://sites.google.com/view/veraomatufmg2023/p%C3%A1gina-inicial?authuser=0) and I took the Introduction of Probability Theory course (Professor: Bernando Nunes Borges de Lima (UFMG)), below you can find the first test of the course with the answers, made by me    .
+
+::: {.hidden}
+$$
+$$
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\arraystretch}{1.2}
+$$
+$$
+:::
+
+## Question 1
+
+Let $\mathbf{A}_n$ and $\mathbf{B}_n$ be a sequence of random events from the same probability space such that $\mathbb{P}(\mathbf{A}_n)\rightarrow 1$ and $\mathbb{P}(\mathbf{B}_n)\rightarrow p$. Show that $\mathbb{P}(\mathbf{A}_n \cap \mathbf{B}_n)\rightarrow p$.
+
+### Solution:
+
+\textit{Solução:} 
+\begin{equation*}
+\begin{array}{rclll}
+\mathbb{P}(\mathbf{A}_n \cap \mathbf{B}_n) & = & \mathbb{P}(\mathbf{B}_n) -  \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n)
+\end{array}
+\end{equation*}
+
+E como:
+\begin{equation*}
+\begin{array}{rclll}
+& & (\mathbf{A}_n \cap \mathbf{B}_n) & \subset & \mathbf{A}^{c}_n \hspace{2ex} \mbox{para todo} \hspace{2ex} n \in \mathbb{N}, \hspace{2ex} \mbox{temos que} \hspace{2ex} \\
+
+0 & \leq & \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n) & 	\leq & \mathbb{P}(\mathbf{A}^{c}_n) \hspace{2ex} \mbox{em que} \hspace{2ex} \\
+
+& & & & \mathbb{P}(\mathbf{A}^{c}_n){\underset{n \to \infty}{\longrightarrow}} 0 \hspace{2ex} \mbox{e portanto,} \hspace{2ex} \\
+
+& & \mathbb{P}(\mathbf{A}_n \cap \mathbf{B}_n) & = & \mathbb{P}(\mathbf{B}_n) -  \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n){\underset{n \to \infty}{\longrightarrow}} p - 0 \; = \; p 
+
+\end{array}
+\end{equation*}
+
+## Question 2
+
+Let $\mathbf{X}$ have density $f_{X}(x) = x^{-2}\cdot\mathbb{1}_{\{(-\infty,-2]\cup [2,\infty))\}}$.
+
+\noindent
+
+\(a\) Show that for all $z \geq 0$, $\mathbb{P}(X>z) = \mathbb{P}(X<-z)$.
+
+### Solution
+
+\begin{equation*}
+\begin{array}{rclll}
+\mathbb{P}(X>z) & = & \displaystyle\int_{z}^{\infty}\dfrac{1}{x^2}dx \; = \; -x^{-1} \Bigr\rvert_{z}^{\infty} \; = \; z^{-1} \\[15pt]
+
+\mathbb{P}(X<-z) & = & \displaystyle\int_{-\infty}^{-z}\dfrac{1}{x^2}dx \; = \; -x^{-1} \Bigr\rvert_{-\infty}^{-z} \; = \; z^{-1} \\[15pt]
+\end{array}
+\end{equation*}
+
+Therefore, we have that $\mathbb{P}(X>z) = \mathbb{P}(X<-z)$.\\
+
+\(b\) What can we say about the expectation of $X$? (Hint: Calculate $\displaystyle\int_{0}^{\infty}\mathbb{P}(X>z)dz$)
+
+### Solution
+
+\begin{equation*}
+\begin{array}{rclll}
+\mathbb{E}(X) & = & \displaystyle\int_{z}^{\infty}\mathbb{P}(X>z) dz - \displaystyle\int_{-\infty}^{-z}\mathbb{P}(X<-z)dz \\[15pt]
+
+& = & \displaystyle\int_{2}^{\infty}\dfrac{1}{z} dz - \displaystyle\int_{-\infty}^{-2}\dfrac{1}{z}dz \\[15pt]
+
+& = & \ln{(z)} \Bigr\rvert_{2}^{\infty} - \ln{(|z|)} \Bigr\rvert_{-\infty}^{-2} \; = \; \infty - \infty \\[15pt]
+\end{array}
+\end{equation*}
+
+Therefore, the expectation of $X$ is not well defined since the expected value of both parts diverges, $\mathbb{E}(X) > \infty$.
+
+## Question 3
+
+Let $\mathbf{Q}$ the square of vertices (+1,0), (-1,0), (0,+1), (0,-1) and $(X,Y)$ the vector with joint density
+\begin{equation*}
+\begin{array}{lclll}
+f_{X,Y}(x,y) & = & \dfrac{ \mathbb{1}_{\mathbf{Q}}(x,y) }{2}.
+\end{array}
+\end{equation*}
+Are the variables $X$ and $Y$ independent?
+
+### Solution
+
+We have that the margins of $X$ and $Y$ are given by:
+For $X$, we have:
+
+\begin{equation*}
+\begin{array}{lclll}
+f_{X}(x) & = & 
+\begin{cases}
+    \displaystyle\int_{-x-1}^{1+x} \dfrac{1}{2}dy, & \text{se $-1\leq x < 0$} \\[15pt]
+    \displaystyle\int_{x-1}^{1-x} \dfrac{1}{2}dy, & \text{se $0\leq x \leq 1$} 
+  \end{cases}
+\end{array}
+\end{equation*}
+
+ in which:
+ \begin{equation*}
+ \begin{array}{lclll}
+ f_{X}(x) & = & 
+\begin{cases}
+    1+x, & \text{se $-1\leq x < 0$} \\[15pt]
+    1-x, & \text{se $0\leq x \leq 1$} 
+  \end{cases}
+\end{array}
+\end{equation*}
+
+For $Y$, then:
+
+ \begin{equation*}
+ \begin{array}{lclll}
+ f_{Y}(y) & = & 
+\begin{cases}
+    1+y, & \text{se $-1\leq y < 0$} \\[15pt]
+    1-y, & \text{se $0\leq y \leq 1$} 
+  \end{cases}
+\end{array}
+\end{equation*}
+
+It can be observed, then, from the margins found, that $X$ and $Y$ are not independent, since $f_{X,Y}(x,y) \neq f_{X}(x)\cdot f_{Y }(y)$.
+
+## Question 4
+
+In a Bernoulli trial with parameters $p$, let $X$ be the variable that denotes the number of trials until we get the 2nd success. Calculate $\mathbb{E}X$.
+
+### Solution
+
+\begin{equation*}
+\begin{array}{lclll}
+\mathbb{P}(\mathbf{X} = k) = (k-1)p^2(1-p)^{k-2}, & k = 2, 3, \ldots
+\end{array}
+\end{equation*}
+
+Then,
+
+\begin{equation*}
+\begin{array}{lclllll}
+\mathbb{E}(\mathbf{X}) & = & \displaystyle\sum_{k=2}^{\infty} k \cdot (k-1) p^2(1-p)^{k-2} \; = \; p^2 \displaystyle\sum_{k=2}^{\infty} k \cdot (k-1) (1-p)^{k-2} \\ 
+
+\end{array}
+\end{equation*}
+
+Considering now $\alpha = (1-p)$,
+
+\begin{equation*}
+\begin{array}{lclllll}
+\displaystyle\sum_{k=2}^{\infty} \dfrac{d^2 \alpha^{k}}{d\alpha^2} \; = \; \dfrac{d^2}{d\alpha^2}\displaystyle\sum_{k=2}^{\infty}\alpha^k \; = \; \dfrac{d^2}{d\alpha^2} \left(\dfrac{\alpha^2}{1-\alpha}\right) \; = \; \dfrac{2}{(1-\alpha)^3} \\ 
+
+\end{array}
+\end{equation*}
+
+Therefore,
+\begin{equation*}
+\begin{array}{lclllll}
+\mathbb{E}(\mathbf{X}) & = & p^2 \cdot \dfrac{2}{p^3} \; = \; \dfrac{2}{p}\\ 
+\end{array}
+\end{equation*} 
+
+## Question 5
+
+From a common deck we remove 2 cards without replacement, observe how many are clubs, return the cards to the deck and shuffle them again. Then we draw 1, 3 or 5 cards without replacement, depending on whether the number of clubs observed in the 1st step was 0.1 or 2, respectively.
+
+\(a\) What is the probability that we withdraw 4$\clubsuit$ in the 2nd step?
+
+### Solution 
+
+$\mathbf{A}_{k}$ = \{ tirei $k$ cartas de paus\}, $k=0, 1,$ ou $2$.  
+
+$\mathbf{B}_{l}$ = \{ retirar $l$ cartas\}, $l=1, 3,$ ou $5$.  
+
+$\mathbf{C}$ = \{ 4$\clubsuit$ na segunda etapa \}
+
+Temos então que:
+\begin{equation*}
+\begin{array}{lcllllllllll}
+\mathbb{P}(\mathbf{A}_{0}) & = & \dfrac{39}{52}\cdot\dfrac{38}{51} ; & \mathbb{P}(\mathbf{A}_{1}) & = & 2\cdot\dfrac{39}{52}\cdot\dfrac{13}{51} ; & \mathbb{P}(\mathbf{A}_{2}) & = & \cdot\dfrac{13}{52}\cdot\dfrac{12}{51}\\[15pt]
+
+\mathbb{P}(\mathbf{C}|\mathbf{A}_{0}) & = & \dfrac{1}{52} ; & \mathbb{P}(\mathbf{C}|\mathbf{A}_{1}) & = & \dfrac{3}{52} ; & \mathbb{P}(\mathbf{C}|\mathbf{A}_{2}) & = & \dfrac{5}{52} ; &\\
+\end{array}
+\end{equation*}
+
+Assim, 
+\begin{equation*}
+\begin{array}{rclrrrlllll}
+\mathbb{P}(\mathbf{C}) & = & \mathbb{P}(\mathbf{A}_{0})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{0}) + \mathbb{P}(\mathbf{A}_{1})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{1}) + \mathbb{P}(\mathbf{A}_{2})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{2}) \\[15pt]
+
+\mathbb{P}(\mathbf{C}) & = & \dfrac{39}{52}\dfrac{38}{51}\cdot\dfrac{1}{52} + 2\dfrac{39}{52}\dfrac{13}{51}\cdot\dfrac{3}{52} + \dfrac{13}{52}\dfrac{12}{51}\cdot\dfrac{5}{52} \\[15pt]
+
+\mathbb{P}(\mathbf{C}) & = & \dfrac{19}{2\cdot 17}\cdot\dfrac{1}{52} + \dfrac{13}{2\cdot 17}\cdot\dfrac{3}{52} + \dfrac{1}{17}\cdot\dfrac{5}{52} \; = \; \dfrac{19+3\cdot 13 + 2 \cdot 5}{52\cdot 2 \cdot 17} \; = \; \dfrac{68}{1768} \\[15pt]
+
+\mathbb{P}(\mathbf{C}) & = & \dfrac{1}{26} \\[15pt]
+\end{array} 
+\end{equation*}
+
+\(b\) What is the probability that we drew at least one club in the 1st step given that we drew the 4$\clubsuit$ in the 2nd step?
+
+### Solution
+
+\begin{equation*}
+\begin{array}{rclrrrlllll}
+\mathbb{P}(\mathbf{A}_{1} \cup \mathbf{A}_{2}|\mathbf{C}) & = & \dfrac{\mathbb{P}(\mathbf{A}_{1})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{1}) + \mathbb{P}(\mathbf{A}_{2})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{2})}{\mathbb{P}(\mathbf{C})}\\[15pt]
+
+ & = & \dfrac{3\cdot 13 + 2 \cdot 5}{52\cdot 2 \cdot 17} \cdot \dfrac{26}{} = \dfrac{49}{68} \\[15pt]
+
+\end{array} 
+\end{equation*}
+
+End!
+
+![](/photos/class.jpg)
