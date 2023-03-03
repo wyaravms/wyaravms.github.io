@@ -4,7 +4,6 @@ title-block-banner: true
 format:
   html:
     page-layout: article
-    linkcolor: "blue"
     html-math-method: mathjax
 author: "Wyara Silva"
 date: "2023-02-28"

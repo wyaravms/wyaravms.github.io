@@ -2,6 +2,7 @@
 title: "About me"
 format: html
 editor: visual
+image-shape: round
 params:
   solutions: false
 toc: true
@@ -11,8 +12,17 @@ comments: false
 
 ---
 
+::: {.grid}
 
+::: {.g-col-6}
+![](/profile.jpg){width=250}
+:::
+
+::: {.g-col-6}
 Hi, my name is Wyara Silva, I'm a statistician, and this year I will start my doctorate in statistics at UFMG. I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate. Osu.
+:::
+
+:::
 
 ## Education
 

@@ -4,24 +4,27 @@ title-block-banner: true
 format:
   html:
     page-layout: article
-    linkcolor: "blue"
     html-math-method: mathjax
 author: "Wyara Silva"
 date: "2023-03-02"
 categories: [probability, tests]
 ---
 
+This summer, I attended [The Summer Program in Mathematics, UFMG 2023](https://sites.google.com/view/veraomatufmg2023/p%C3%A1gina-inicial?authuser=0) and I took the Introduction of Probability Theory course (Professor: Bernando Nunes Borges de Lima (UFMG)), below you can find the first test of the course with the answers.
 
-This summer, I attended [The Summer Program in Mathematics, UFMG 2023](https://sites.google.com/view/veraomatufmg2023/p%C3%A1gina-inicial?authuser=0) and I took the Introduction of Probability Theory course (Professor: Bernando Nunes Borges de Lima (UFMG)), below you can find the first test of the course with the answers, made by me    .
+::: hidden
+$$
 
-::: {.hidden}
 $$
-$$
+
+```{=tex}
 \usepackage{amsfonts}
 \usepackage{dsfont}
 \renewcommand{\baselinestretch}{1.2}
 \renewcommand{\arraystretch}{1.2}
+```
 $$
+
 $$
 :::
 
@@ -31,19 +34,17 @@ Let $\mathbf{A}_n$ and $\mathbf{B}_n$ be a sequence of random events from the sa
 
 ### Solution:
 
-\textit{Solução:} 
-\begin{equation*}
+\textit{Solução:} \begin{equation*}
 \begin{array}{rclll}
 \mathbb{P}(\mathbf{A}_n \cap \mathbf{B}_n) & = & \mathbb{P}(\mathbf{B}_n) -  \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n)
 \end{array}
 \end{equation*}
 
-E como:
-\begin{equation*}
+E como: \begin{equation*}
 \begin{array}{rclll}
 & & (\mathbf{A}_n \cap \mathbf{B}_n) & \subset & \mathbf{A}^{c}_n \hspace{2ex} \mbox{para todo} \hspace{2ex} n \in \mathbb{N}, \hspace{2ex} \mbox{temos que} \hspace{2ex} \\
 
-0 & \leq & \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n) & 	\leq & \mathbb{P}(\mathbf{A}^{c}_n) \hspace{2ex} \mbox{em que} \hspace{2ex} \\
+0 & \leq & \mathbb{P}(\mathbf{A}^{c}_n \cap \mathbf{B}_n) &     \leq & \mathbb{P}(\mathbf{A}^{c}_n) \hspace{2ex} \mbox{em que} \hspace{2ex} \\
 
 & & & & \mathbb{P}(\mathbf{A}^{c}_n){\underset{n \to \infty}{\longrightarrow}} 0 \hspace{2ex} \mbox{e portanto,} \hspace{2ex} \\
 
@@ -62,6 +63,7 @@ Let $\mathbf{X}$ have density $f_{X}(x) = x^{-2}\cdot\mathbb{1}_{\{(-\infty,-2]\
 
 ### Solution
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 \mathbb{P}(X>z) & = & \displaystyle\int_{z}^{\infty}\dfrac{1}{x^2}dx \; = \; -x^{-1} \Bigr\rvert_{z}^{\infty} \; = \; z^{-1} \\[15pt]
@@ -69,13 +71,14 @@ Let $\mathbf{X}$ have density $f_{X}(x) = x^{-2}\cdot\mathbb{1}_{\{(-\infty,-2]\
 \mathbb{P}(X<-z) & = & \displaystyle\int_{-\infty}^{-z}\dfrac{1}{x^2}dx \; = \; -x^{-1} \Bigr\rvert_{-\infty}^{-z} \; = \; z^{-1} \\[15pt]
 \end{array}
 \end{equation*}
-
+```
 Therefore, we have that $\mathbb{P}(X>z) = \mathbb{P}(X<-z)$.\\
 
 \(b\) What can we say about the expectation of $X$? (Hint: Calculate $\displaystyle\int_{0}^{\infty}\mathbb{P}(X>z)dz$)
 
 ### Solution
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 \mathbb{E}(X) & = & \displaystyle\int_{z}^{\infty}\mathbb{P}(X>z) dz - \displaystyle\int_{-\infty}^{-z}\mathbb{P}(X<-z)dz \\[15pt]
@@ -85,24 +88,22 @@ Therefore, we have that $\mathbb{P}(X>z) = \mathbb{P}(X<-z)$.\\
 & = & \ln{(z)} \Bigr\rvert_{2}^{\infty} - \ln{(|z|)} \Bigr\rvert_{-\infty}^{-2} \; = \; \infty - \infty \\[15pt]
 \end{array}
 \end{equation*}
-
+```
 Therefore, the expectation of $X$ is not well defined since the expected value of both parts diverges, $\mathbb{E}(X) > \infty$.
 
 ## Question 3
 
-Let $\mathbf{Q}$ the square of vertices (+1,0), (-1,0), (0,+1), (0,-1) and $(X,Y)$ the vector with joint density
-\begin{equation*}
+Let $\mathbf{Q}$ the square of vertices (+1,0), (-1,0), (0,+1), (0,-1) and $(X,Y)$ the vector with joint density \begin{equation*}
 \begin{array}{lclll}
 f_{X,Y}(x,y) & = & \dfrac{ \mathbb{1}_{\mathbf{Q}}(x,y) }{2}.
 \end{array}
-\end{equation*}
-Are the variables $X$ and $Y$ independent?
+\end{equation*} Are the variables $X$ and $Y$ independent?
 
 ### Solution
 
-We have that the margins of $X$ and $Y$ are given by:
-For $X$, we have:
+We have that the margins of $X$ and $Y$ are given by: For $X$, we have:
 
+```{=tex}
 \begin{equation*}
 \begin{array}{lclll}
 f_{X}(x) & = & 
@@ -112,9 +113,8 @@ f_{X}(x) & = &
   \end{cases}
 \end{array}
 \end{equation*}
-
- in which:
- \begin{equation*}
+```
+in which: \begin{equation*}
  \begin{array}{lclll}
  f_{X}(x) & = & 
 \begin{cases}
@@ -126,7 +126,8 @@ f_{X}(x) & = &
 
 For $Y$, then:
 
- \begin{equation*}
+```{=tex}
+\begin{equation*}
  \begin{array}{lclll}
  f_{Y}(y) & = & 
 \begin{cases}
@@ -135,7 +136,7 @@ For $Y$, then:
   \end{cases}
 \end{array}
 \end{equation*}
-
+```
 It can be observed, then, from the margins found, that $X$ and $Y$ are not independent, since $f_{X,Y}(x,y) \neq f_{X}(x)\cdot f_{Y }(y)$.
 
 ## Question 4
@@ -144,36 +145,38 @@ In a Bernoulli trial with parameters $p$, let $X$ be the variable that denotes t
 
 ### Solution
 
+```{=tex}
 \begin{equation*}
 \begin{array}{lclll}
 \mathbb{P}(\mathbf{X} = k) = (k-1)p^2(1-p)^{k-2}, & k = 2, 3, \ldots
 \end{array}
 \end{equation*}
-
+```
 Then,
 
+```{=tex}
 \begin{equation*}
 \begin{array}{lclllll}
 \mathbb{E}(\mathbf{X}) & = & \displaystyle\sum_{k=2}^{\infty} k \cdot (k-1) p^2(1-p)^{k-2} \; = \; p^2 \displaystyle\sum_{k=2}^{\infty} k \cdot (k-1) (1-p)^{k-2} \\ 
 
 \end{array}
 \end{equation*}
-
+```
 Considering now $\alpha = (1-p)$,
 
+```{=tex}
 \begin{equation*}
 \begin{array}{lclllll}
 \displaystyle\sum_{k=2}^{\infty} \dfrac{d^2 \alpha^{k}}{d\alpha^2} \; = \; \dfrac{d^2}{d\alpha^2}\displaystyle\sum_{k=2}^{\infty}\alpha^k \; = \; \dfrac{d^2}{d\alpha^2} \left(\dfrac{\alpha^2}{1-\alpha}\right) \; = \; \dfrac{2}{(1-\alpha)^3} \\ 
 
 \end{array}
 \end{equation*}
-
-Therefore,
-\begin{equation*}
+```
+Therefore, \begin{equation*}
 \begin{array}{lclllll}
 \mathbb{E}(\mathbf{X}) & = & p^2 \cdot \dfrac{2}{p^3} \; = \; \dfrac{2}{p}\\ 
 \end{array}
-\end{equation*} 
+\end{equation*}
 
 ## Question 5
 
@@ -181,16 +184,15 @@ From a common deck we remove 2 cards without replacement, observe how many are c
 
 \(a\) What is the probability that we withdraw 4$\clubsuit$ in the 2nd step?
 
-### Solution 
+### Solution
 
-$\mathbf{A}_{k}$ = \{ tirei $k$ cartas de paus\}, $k=0, 1,$ ou $2$.  
+$\mathbf{A}_{k}$ = { tirei $k$ cartas de paus}, $k=0, 1,$ ou $2$.
 
-$\mathbf{B}_{l}$ = \{ retirar $l$ cartas\}, $l=1, 3,$ ou $5$.  
+$\mathbf{B}_{l}$ = { retirar $l$ cartas}, $l=1, 3,$ ou $5$.
 
-$\mathbf{C}$ = \{ 4$\clubsuit$ na segunda etapa \}
+$\mathbf{C}$ = { 4$\clubsuit$ na segunda etapa }
 
-Temos então que:
-\begin{equation*}
+Temos então que: \begin{equation*}
 \begin{array}{lcllllllllll}
 \mathbb{P}(\mathbf{A}_{0}) & = & \dfrac{39}{52}\cdot\dfrac{38}{51} ; & \mathbb{P}(\mathbf{A}_{1}) & = & 2\cdot\dfrac{39}{52}\cdot\dfrac{13}{51} ; & \mathbb{P}(\mathbf{A}_{2}) & = & \cdot\dfrac{13}{52}\cdot\dfrac{12}{51}\\[15pt]
 
@@ -198,8 +200,7 @@ Temos então que:
 \end{array}
 \end{equation*}
 
-Assim, 
-\begin{equation*}
+Assim, \begin{equation*}
 \begin{array}{rclrrrlllll}
 \mathbb{P}(\mathbf{C}) & = & \mathbb{P}(\mathbf{A}_{0})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{0}) + \mathbb{P}(\mathbf{A}_{1})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{1}) + \mathbb{P}(\mathbf{A}_{2})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{2}) \\[15pt]
 
@@ -215,6 +216,7 @@ Assim,
 
 ### Solution
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclrrrlllll}
 \mathbb{P}(\mathbf{A}_{1} \cup \mathbf{A}_{2}|\mathbf{C}) & = & \dfrac{\mathbb{P}(\mathbf{A}_{1})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{1}) + \mathbb{P}(\mathbf{A}_{2})\cdot \mathbb{P}(\mathbf{C}|\mathbf{A}_{2})}{\mathbb{P}(\mathbf{C})}\\[15pt]
@@ -223,7 +225,7 @@ Assim,
 
 \end{array} 
 \end{equation*}
-
+```
 End!
 
 ![](/photos/class.jpg)

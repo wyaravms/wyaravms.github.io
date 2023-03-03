@@ -18,15 +18,6 @@ about:
     - icon: file
       text: Lattes
       href: http://lattes.cnpq.br/5538303153427476
-    - icon: google scholar
-      text: Google Scholar
-      href: https://scholar.google.com/citations?user=2kt3OlEAAAAJ&hl=en
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/wyaravms
-    - icon: github
-      text: Github
-      href: https://github.com/wyaravms
     - icon: film
       text: Letterboxd
       href: https://letterboxd.com/wvmouras/

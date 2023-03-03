@@ -2,7 +2,7 @@
 title: "Photos"
 ---
 
-Pictures I took over the years in some places I've visited
+Photos I took in some places I've been over the years.
 
 ::: {layout-ncol="2"}
 ![Adriana Varejão, Celacanto provoca maremoto, Inhotim, Brumadinho, MG, Brasil](/photos/inhotim-2.jpg)

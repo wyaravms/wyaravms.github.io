@@ -10,7 +10,7 @@ website:
   page-navigation: true
   site-url: https://wyaravms.github.io/
   navbar:
-    background: "#496F91"
+    background: "#143c61"
     right:
       - href: index.qmd
         text: Home
@@ -19,6 +19,12 @@ website:
       - href: pics.qmd
         text: Photos
       - about.qmd
+      - icon: twitter
+        href: https://twitter.com/wyaravms
+      - icon: github
+        href: https://github.com/wyaravms
+      - icon: google scholar
+        href: https://scholar.google.com/citations?user=2kt3OlEAAAAJ&hl=en
   page-footer: 
     left: "Website made with [Quarto](https://quarto.org/) by Wyara Silva, 2023" 
     right:
