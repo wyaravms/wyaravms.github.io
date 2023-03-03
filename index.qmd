@@ -16,7 +16,7 @@ about:
       text: Email
       href: mailto:wyaravms@gmail.com  
     - icon: file
-      text: Lattes
+      text: Curriculum Lattes
       href: http://lattes.cnpq.br/5538303153427476
     - icon: github
       text: Github
