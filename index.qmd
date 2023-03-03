@@ -30,7 +30,9 @@ about:
 comments: false
 ---
 
-Hi, I'm Wyara, welcome to my website!
+## Hello!
+
+I'm Wyara, welcome to my website!
 
 I'm a statistician, and I'm currently pursuing a Doctoral Degree in Statistics from the Graduate Program in Statistics at UFMG.
 
