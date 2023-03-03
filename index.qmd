@@ -10,7 +10,7 @@ about:
   template: trestles
   image: profile.jpg
   image-width: 12em
-  image-shape: round
+  image-shape: rounded
   links:
     - icon: envelope
       text: Email
