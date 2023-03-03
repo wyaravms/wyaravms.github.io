@@ -1,28 +1,30 @@
 ---
 title: "About me"
-format: html
-editor: visual
-image-shape: round
-params:
-  solutions: false
-toc: true
-toc-depth: 6
-toc-location: right
+format:
+  html:
+    page-layout: article
+    toc: true
+    toc-depth: 6
+    toc-location: right
+about:
+  template: trestles
+  image: profile.jpg
+  image-width: 12em
+  image-shape: round
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:wyaravms@gmail.com  
+    - icon: file
+      text: Lattes
+      href: http://lattes.cnpq.br/5538303153427476
+    - icon: film
+      text: Letterboxd
+      href: https://letterboxd.com/wvmouras/
 comments: false
-
 ---
 
-::: {.grid}
-
-::: {.g-col-6}
-![](/profile.jpg){width=250}
-:::
-
-::: {.g-col-6}
 Hi, my name is Wyara Silva, I'm a statistician, and this year I will start my doctorate in statistics at UFMG. I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate. Osu.
-:::
-
-:::
 
 ## Education
 
@@ -45,3 +47,4 @@ Federal University of Piauí (UFPI)
 
 Ferraz Do Nascimento, Fernando; <b>Moura E Silva, Wyara Vanesa</b> (2017) [A Bayesian model for multiple change point to extremes, with application to environmental and financial data](https://doi.org/10.1080/02664763.2016.1254733), Journal of Applied Statistics, 44:13, 2410-2426.
 
+------------------------------------------------------------------------

@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "",
-    "text": "Hi, my name is Wyara Silva, I’m a statistician, and this year I will start my doctorate in statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu."
+    "text": "Currently: Doctorate student in Statistics from the Graduate Program in Statistics at UFMG."
   },
   {
     "objectID": "home.html",
@@ -30,16 +30,16 @@
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "Education",
-    "text": "Education\n Doctoral Student in Statistics (2023-Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics (2015-2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics (2010-2015)\nFederal University of Piauí (UFPI)"
+    "text": "Education\nDoctoral Student in Statistics (2023-Current)\nFederal University of Minas Gerais (UFMG)\nMaster degree in Applied Mathematics and Statistics (2015-2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics (2010-2015)\nFederal University of Piauí (UFPI)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Wyara Silva",
     "section": "",
-    "text": "Hi, this is my personal website.   I’m a statistician, and  here  I will share some notes, tests, codes and other things that I did and I will do during my academic life. Some information about me can be found here."
+    "text": "Hi, I’m Wyara, welcome to my website!\nI’m a statistician, and I’m currently pursuing a Doctoral Degree in Statistics from the Graduate Program in Statistics at UFMG.\nIn this website I will share some notes, tests, codes and other things that I did and I will do during my academic life.\nI’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu."
   },
   {
     "objectID": "pics.html",
@@ -93,7 +93,7 @@
   {
     "objectID": "about.html#published-papers",
     "href": "about.html#published-papers",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "Published papers",
     "text": "Published papers\nMoura E Silva, Wyara Vanesa; Ramírez Orozco, Daniel Leonardo (2022). Evaluación de rendimiento de los estimadores para los parámetros de la Distribución Burr XII. Comunicaciones En Estadística, v. 15, p. 1-14.\nSilva, Wyara Vanesa Moura E; Nascimento, Fernando Ferraz Do; Bourguingnon, Marcelo (2020). A change-point model for the r-largest order statistics with applications to environmental and financial data, Applied Mathematical Modelling, Volume 82, Pages 666-679, ISSN 0307-904X.\nE Silva, Wyara Vanesa Moura; Do Nascimento, Fernando Ferraz (2019) MCMC4Extremes: an R package for Bayesian inference for extremes and its extensions, Communications in Statistics - Simulation and Computation, 51:2, 432-442.\nFerraz Do Nascimento, Fernando; Moura E Silva, Wyara Vanesa (2017) A Bayesian model for multiple change point to extremes, with application to environmental and financial data, Journal of Applied Statistics, 44:13, 2410-2426."
   },
@@ -107,21 +107,21 @@
   {
     "objectID": "about-2.html",
     "href": "about-2.html",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "",
-    "text": "Hi, my name is Wyara Silva, I’m a statistician, and this year I will start my doctorate in statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu."
+    "text": "Currently: Doctorate student in Statistics from the Graduate Program in Statistics at UFMG."
   },
   {
     "objectID": "about-2.html#education",
     "href": "about-2.html#education",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "Education",
-    "text": "Education\n Doctoral Student in Statistics (2023-Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics (2015-2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics (2010-2015)\nFederal University of Piauí (UFPI)"
+    "text": "Education\nDoctoral Student in Statistics (2023-Current)\nFederal University of Minas Gerais (UFMG)\nMaster degree in Applied Mathematics and Statistics (2015-2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics (2010-2015)\nFederal University of Piauí (UFPI)"
   },
   {
     "objectID": "about-2.html#published-papers",
     "href": "about-2.html#published-papers",
-    "title": "About me",
+    "title": "Wyara Silva",
     "section": "Published papers",
     "text": "Published papers\nMoura E Silva, Wyara Vanesa; Ramírez Orozco, Daniel Leonardo (2022). Evaluación de rendimiento de los estimadores para los parámetros de la Distribución Burr XII. Comunicaciones En Estadística, v. 15, p. 1-14.\nSilva, Wyara Vanesa Moura E; Nascimento, Fernando Ferraz Do; Bourguingnon, Marcelo (2020). A change-point model for the r-largest order statistics with applications to environmental and financial data, Applied Mathematical Modelling, Volume 82, Pages 666-679, ISSN 0307-904X.\nE Silva, Wyara Vanesa Moura; Do Nascimento, Fernando Ferraz (2019) MCMC4Extremes: an R package for Bayesian inference for extremes and its extensions, Communications in Statistics - Simulation and Computation, 51:2, 432-442.\nFerraz Do Nascimento, Fernando; Moura E Silva, Wyara Vanesa (2017) A Bayesian model for multiple change point to extremes, with application to environmental and financial data, Journal of Applied Statistics, 44:13, 2410-2426."
   },
@@ -229,5 +229,40 @@
     "title": "Summer 2023",
     "section": "Question 5",
     "text": "Question 5\nFrom a common deck we remove 2 cards without replacement, observe how many are clubs, return the cards to the deck and shuffle them again. Then we draw 1, 3 or 5 cards without replacement, depending on whether the number of clubs observed in the 1st step was 0.1 or 2, respectively.\n(a) What is the probability that we withdraw 4\\(\\clubsuit\\) in the 2nd step?\n\nSolution\n\\(\\mathbf{A}_{k}\\) = { tirei \\(k\\) cartas de paus}, \\(k=0, 1,\\) ou \\(2\\).\n\\(\\mathbf{B}_{l}\\) = { retirar \\(l\\) cartas}, \\(l=1, 3,\\) ou \\(5\\).\n\\(\\mathbf{C}\\) = { 4\\(\\clubsuit\\) na segunda etapa }\nTemos então que: \\[\\begin{equation*}\n\\begin{array}{lcllllllllll}\n\\mathbb{P}(\\mathbf{A}_{0}) & = & \\dfrac{39}{52}\\cdot\\dfrac{38}{51} ; & \\mathbb{P}(\\mathbf{A}_{1}) & = & 2\\cdot\\dfrac{39}{52}\\cdot\\dfrac{13}{51} ; & \\mathbb{P}(\\mathbf{A}_{2}) & = & \\cdot\\dfrac{13}{52}\\cdot\\dfrac{12}{51}\\\\[15pt]\n\n\\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{0}) & = & \\dfrac{1}{52} ; & \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{1}) & = & \\dfrac{3}{52} ; & \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{2}) & = & \\dfrac{5}{52} ; &\\\\\n\\end{array}\n\\end{equation*}\\]\nAssim, \\[\\begin{equation*}\n\\begin{array}{rclrrrlllll}\n\\mathbb{P}(\\mathbf{C}) & = & \\mathbb{P}(\\mathbf{A}_{0})\\cdot \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{0}) + \\mathbb{P}(\\mathbf{A}_{1})\\cdot \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{1}) + \\mathbb{P}(\\mathbf{A}_{2})\\cdot \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{2}) \\\\[15pt]\n\n\\mathbb{P}(\\mathbf{C}) & = & \\dfrac{39}{52}\\dfrac{38}{51}\\cdot\\dfrac{1}{52} + 2\\dfrac{39}{52}\\dfrac{13}{51}\\cdot\\dfrac{3}{52} + \\dfrac{13}{52}\\dfrac{12}{51}\\cdot\\dfrac{5}{52} \\\\[15pt]\n\n\\mathbb{P}(\\mathbf{C}) & = & \\dfrac{19}{2\\cdot 17}\\cdot\\dfrac{1}{52} + \\dfrac{13}{2\\cdot 17}\\cdot\\dfrac{3}{52} + \\dfrac{1}{17}\\cdot\\dfrac{5}{52} \\; = \\; \\dfrac{19+3\\cdot 13 + 2 \\cdot 5}{52\\cdot 2 \\cdot 17} \\; = \\; \\dfrac{68}{1768} \\\\[15pt]\n\n\\mathbb{P}(\\mathbf{C}) & = & \\dfrac{1}{26} \\\\[15pt]\n\\end{array}\n\\end{equation*}\\]\n(b) What is the probability that we drew at least one club in the 1st step given that we drew the 4\\(\\clubsuit\\) in the 2nd step?\n\n\nSolution\n\\[\\begin{equation*}\n\\begin{array}{rclrrrlllll}\n\\mathbb{P}(\\mathbf{A}_{1} \\cup \\mathbf{A}_{2}|\\mathbf{C}) & = & \\dfrac{\\mathbb{P}(\\mathbf{A}_{1})\\cdot \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{1}) + \\mathbb{P}(\\mathbf{A}_{2})\\cdot \\mathbb{P}(\\mathbf{C}|\\mathbf{A}_{2})}{\\mathbb{P}(\\mathbf{C})}\\\\[15pt]\n\n& = & \\dfrac{3\\cdot 13 + 2 \\cdot 5}{52\\cdot 2 \\cdot 17} \\cdot \\dfrac{26}{} = \\dfrac{49}{68} \\\\[15pt]\n\n\\end{array}\n\\end{equation*}\\]\nEnd!"
+  },
+  {
+    "objectID": "index-2.html",
+    "href": "index-2.html",
+    "title": "Wyara Silva",
+    "section": "",
+    "text": "Hi, I’m Wyara, welcome to my website!\nI’m a statistician, and I’m currently pursuing a Doctoral Degree in Statistics from the Graduate Program in Statistics at UFMG.\nIn this website I will share some notes, tests, codes and other things that I did and I will do during my academic life.\nI’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu."
+  },
+  {
+    "objectID": "about-extra.html",
+    "href": "about-extra.html",
+    "title": "About me",
+    "section": "",
+    "text": "Hi, my name is Wyara Silva, I’m a statistician, and this year I will start my doctorate in statistics at UFMG. I’m addicted to coffee, passionate about cinema and also I’m orange belt in karate. Osu."
+  },
+  {
+    "objectID": "about-extra.html#education",
+    "href": "about-extra.html#education",
+    "title": "About me",
+    "section": "Education",
+    "text": "Education\n Doctoral Student in Statistics (2023-Current) \nFederal University of Minas Gerais (UFMG)\n Master degree in Applied Mathematics and Statistics (2015-2017)\nFederal University of Rio Grande do Norte (UFRN)\nBachelor degree in Statistics (2010-2015)\nFederal University of Piauí (UFPI)"
+  },
+  {
+    "objectID": "about-extra.html#published-papers",
+    "href": "about-extra.html#published-papers",
+    "title": "About me",
+    "section": "Published papers",
+    "text": "Published papers\nMoura E Silva, Wyara Vanesa; Ramírez Orozco, Daniel Leonardo (2022). Evaluación de rendimiento de los estimadores para los parámetros de la Distribución Burr XII. Comunicaciones En Estadística, v. 15, p. 1-14.\nSilva, Wyara Vanesa Moura E; Nascimento, Fernando Ferraz Do; Bourguingnon, Marcelo (2020). A change-point model for the r-largest order statistics with applications to environmental and financial data, Applied Mathematical Modelling, Volume 82, Pages 666-679, ISSN 0307-904X.\nE Silva, Wyara Vanesa Moura; Do Nascimento, Fernando Ferraz (2019) MCMC4Extremes: an R package for Bayesian inference for extremes and its extensions, Communications in Statistics - Simulation and Computation, 51:2, 432-442.\nFerraz Do Nascimento, Fernando; Moura E Silva, Wyara Vanesa (2017) A Bayesian model for multiple change point to extremes, with application to environmental and financial data, Journal of Applied Statistics, 44:13, 2410-2426."
+  },
+  {
+    "objectID": "index-extra.html",
+    "href": "index-extra.html",
+    "title": "Wyara Silva",
+    "section": "",
+    "text": "Hi, this is my personal website.   I’m a statistician, and  here  I will share some notes, tests, codes and other things that I did and I will do during my academic life. Some information about me can be found here."
   }
 ]

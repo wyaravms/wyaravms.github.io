@@ -1,21 +1,39 @@
 ---
-pagetitle: ""
-title: "<b>Wyara Silva</b>"
-format: 
+title: "Wyara Silva"
+format:
   html:
     page-layout: article
+    toc: true
+    toc-depth: 6
+    toc-location: right
 about:
-  template: solana
+  template: trestles
   image: profile.jpg
-  image-width: 10em
+  image-width: 12em
   image-shape: round
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:wyaravms@gmail.com  
+    - icon: file
+      text: Lattes
+      href: http://lattes.cnpq.br/5538303153427476
+    - icon: github
+      text: Github
+      href: https://github.com/wyaravms
+    - icon: google scholar
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=2kt3OlEAAAAJ&hl=en
+    - icon: film
+      text: Letterboxd
+      href: https://letterboxd.com/wvmouras/
 comments: false
 ---
 
-<p style="font-size: 23px;">
+Hi, I'm Wyara, welcome to my website!
 
-Hi, this is my personal website. <br> <br> I'm a statistician, and <a href=home.qmd> here </a> I will share some notes, tests, codes and other things that I did and I will do during my academic life. Some information about me can be found <a href=about.qmd>here</a>.
+I'm a statistician, and I'm currently pursuing a Doctoral Degree in Statistics from the Graduate Program in Statistics at UFMG.
 
-</p>
+In this website I will share some notes, tests, codes and other things that I did and I will do during my academic life.
 
-------------------------------------------------------------------------
+I'm addicted to coffee, passionate about cinema and also I'm orange belt in karate. Osu.

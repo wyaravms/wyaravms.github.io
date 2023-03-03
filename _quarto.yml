@@ -6,19 +6,21 @@ execute:
   freeze: auto
 
 website:
-  title: "Wyara Silva"
+  title: "wyaravms.github.io"
   page-navigation: true
   site-url: https://wyaravms.github.io/
   navbar:
     background: "#143c61"
-    right:
+    left:
       - href: index.qmd
         text: Home
       - href: home.qmd
         text: Blog
       - href: pics.qmd
         text: Photos
-      - about.qmd
+      - href: about.qmd
+        text: Resume
+    right:
       - icon: twitter
         href: https://twitter.com/wyaravms
       - icon: github

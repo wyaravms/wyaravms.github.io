@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wyaravms.github.io/about.html</loc>
-    <lastmod>2023-03-03T13:49:40.959Z</lastmod>
+    <lastmod>2023-03-03T14:44:15.355Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/index.html</loc>
-    <lastmod>2023-03-03T13:50:31.915Z</lastmod>
+    <lastmod>2023-03-03T14:45:09.301Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/home.html</loc>
-    <lastmod>2023-03-03T13:12:06.091Z</lastmod>
+    <lastmod>2023-03-03T14:44:23.077Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/posts/central limit theorem/question-poisson.html</loc>
@@ -26,11 +26,11 @@
   </url>
   <url>
     <loc>https://wyaravms.github.io/about-2.html</loc>
-    <lastmod>2023-03-03T13:50:37.535Z</lastmod>
+    <lastmod>2023-03-03T14:40:50.774Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/pics.html</loc>
-    <lastmod>2023-03-03T13:12:10.212Z</lastmod>
+    <lastmod>2023-03-03T14:40:59.281Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/posts/verão/prova-um.html</loc>
@@ -39,5 +39,17 @@
   <url>
     <loc>https://wyaravms.github.io/posts/summer/prova-um.html</loc>
     <lastmod>2023-03-02T14:43:05.958Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wyaravms.github.io/index-2.html</loc>
+    <lastmod>2023-03-03T14:42:11.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wyaravms.github.io/about-extra.html</loc>
+    <lastmod>2023-03-03T14:43:44.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wyaravms.github.io/index-extra.html</loc>
+    <lastmod>2023-03-03T14:43:44.538Z</lastmod>
   </url>
 </urlset>

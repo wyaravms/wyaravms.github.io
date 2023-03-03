@@ -1,0 +1,21 @@
+---
+pagetitle: ""
+title: "<b>Wyara Silva</b>"
+format: 
+  html:
+    page-layout: article
+about:
+  template: solana
+  image: profile.jpg
+  image-width: 10em
+  image-shape: round
+comments: false
+---
+
+<p style="font-size: 23px;">
+
+Hi, this is my personal website. <br> <br> I'm a statistician, and <a href=home.qmd> here </a> I will share some notes, tests, codes and other things that I did and I will do during my academic life. Some information about me can be found <a href=about.qmd>here</a>.
+
+</p>
+
+------------------------------------------------------------------------
