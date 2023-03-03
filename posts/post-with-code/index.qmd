@@ -16,15 +16,13 @@ library(ggplot2)
 dados = readr::read_table("Dados_Weibull.txt", col_names = FALSE)
 
 ggplot(dados, aes(x=X1)) + 
-  geom_histogram(aes(y=..density..), bins = 30, color="black", fill="grey")+
+  geom_histogram(bins = 30, color="black", fill="grey")+
   geom_density(alpha=.2, linetype = 2, fill="light blue") +
   labs(x="dados", y = "densidade")
 
 newton.raphson.w = function(x.dados, alpha.0=10, precisao = 1e-7, n=100){
-  
   dlogLikW = function(y){(length(x.dados)/y) + sum(log(x.dados)) - sum(log(x.dados)*(x.dados^y))}
   ddlogLikW = function(z){-(length(x.dados)/z^2) - sum((log(x.dados)^2)*(x.dados^z))}
-  
   for (i in 1:n) {
     alpha.1 = alpha.0 - dlogLikW(alpha.0)/ddlogLikW(alpha.0)
     
