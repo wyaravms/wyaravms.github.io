@@ -6,7 +6,7 @@ format:
     page-layout: article
     html-math-method: mathjax
 author: "Wyara Silva"
-date: "2023-02-28"
+date: "2023-03-01"
 categories: [probability, central limit theorem, poisson]
 ---
 
@@ -14,6 +14,39 @@ categories: [probability, central limit theorem, poisson]
 
 Use the central limit theorem to verify that,
 
-$$\lim_{n\xrightarrow[]{}\infty}= e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} = 1.$$
+\begin{equation*}
+\begin{array}{rclll}
+\lim\limits_{n \to \infty}e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} & = & 1.
+\end{array}
+\end{equation*}
+
 
 ## Answer:
+
+Let $X_{1}, X_{2}, \cdots$, i.i.d. with $\sim Pois(1)$. Then, $\mathbb{E}(X_{i}) = 1$ and $Var(X_{1}) = 1$.
+
+Furthermore, we know that $S_{n} = X_{1} + X_{2} + \cdots + X_{n}$, will have $S_{n} \sim Pois(n)$, $\mathbb{E}(X_{i}) = n$ and $Var(X_{1}) = n$.
+
+Now, using the central limit theorem we get
+
+\begin{equation*}
+\begin{array}{rclll}
+e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} & = & \displaystyle\sum^{n}_{k=0}\mathbb{P}(S_{n} = k) & = & \mathbb{P}(S_{n}\leq n)
+\end{array}
+\end{equation*}
+
+in which, 
+
+\begin{equation*}
+\begin{array}{rclll}
+\mathbb{P}\left( \dfrac{S_{n} - n}{\sqrt{n}} \leq \dfrac{n - n}{\sqrt{n}}\right) & {\underset{n \to \infty}{\longrightarrow}} & \mathbb{P}(Z\leq 0) & = & \dfrac{1}{2}
+\end{array}
+\end{equation*}
+
+$Z \sim N(0,1)$. Therefore, the proof is done. 
+
+\begin{equation*}
+\begin{array}{rclll}
+\lim\limits_{n \to \infty}\displaystyle\sum^{n}_{k=0}e^{-n}\dfrac{n^{k}}{k!} & = & \dfrac{1}{2}.
+\end{array}
+\end{equation*}
