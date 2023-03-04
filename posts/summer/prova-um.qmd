@@ -227,4 +227,3 @@ Assim, \begin{equation*}
 \end{equation*}
 ```
 End!
-
