@@ -1,52 +1,53 @@
 ---
 title: "Newton-Raphson's method for Weibull distribution"
 author: "Wyara Silva"
+format: 
+  html:
+    fig-width: 7
+    fig-height: 5
 date: "2023-02-25"
 categories: [R, code, analysis]
 title-block-banner: true
 ---
 
-Soon I will modify this code to a cleaner one.
+Obtaining the maximum likelihood estimate using the Newton-Raphson's method  for the alpha parameter for the Weibull distribution.
+
+
 
 ```{r}
-rm(list=ls(all=TRUE))
-set.seed(22)
-library(ggplot2)
+#| warning: false
+library(tidyverse)
 
 dados = readr::read_table("Dados_Weibull.txt", col_names = FALSE)
 
-ggplot(dados, aes(x=X1)) + 
-  geom_histogram(bins = 30, color="black", fill="grey")+
+ggplot(dados, aes(X1)) +
+  geom_histogram(aes(y=after_stat(density)), bins = 30, color="black", fill="grey")+
   geom_density(alpha=.2, linetype = 2, fill="light blue") +
-  labs(x="dados", y = "densidade")
+  labs(x="Data", y = "Density")
 
 newton.raphson.w = function(x.dados, alpha.0=10, precisao = 1e-7, n=100){
   dlogLikW = function(y){(length(x.dados)/y) + sum(log(x.dados)) - sum(log(x.dados)*(x.dados^y))}
   ddlogLikW = function(z){-(length(x.dados)/z^2) - sum((log(x.dados)^2)*(x.dados^z))}
   for (i in 1:n) {
     alpha.1 = alpha.0 - dlogLikW(alpha.0)/ddlogLikW(alpha.0)
-    
     if(abs(alpha.1 - alpha.0) < precisao){
       res = list(alpha.1,i)
-      names(res) = c("alpha.estimado","n.iter")
+      names(res) = c("alpha.estimated","n.iter")
       return(res)
     }
-    
     alpha.0 = alpha.1
   }
-  print("com o número de iterações não houve convergência")
+  print("with the number of iterations there was no convergence")
 }
-
-newton.raphson.w(dados)
+newton.raphson.w(dados$X1)
 
 #simulation
 n = c(10,30,100,1000)
-
 estimativas = array(NA, dim=c(1, length(n)))
 
 for (i in 1:length(n)){
   dat =  rweibull(n[i], shape=5, scale=1)
-  estimativas[,i] = newton.raphson.w(dat,2)$alpha.estimado
+  estimativas[,i] = newton.raphson.w(dat,2)$alpha.estimated
 }
 
 estimativas
