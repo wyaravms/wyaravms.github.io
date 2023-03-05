@@ -1,5 +1,6 @@
 ---
 title: "Central Limit Theorem (Question)"
+subtitle: "Application of the central limit theorem involving Poisson distribution."
 title-block-banner: true
 format:
   html:
@@ -14,13 +15,13 @@ categories: [probability, central limit theorem, poisson]
 
 Use the central limit theorem to verify that,
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 \lim\limits_{n \to \infty}e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} & = & 1.
 \end{array}
 \end{equation*}
-
-
+```
 ## Answer:
 
 Let $X_{1}, X_{2}, \cdots$, i.i.d. with $\sim Pois(1)$. Then, $\mathbb{E}(X_{i}) = 1$ and $Var(X_{1}) = 1$.
@@ -29,24 +30,28 @@ Furthermore, we know that $S_{n} = X_{1} + X_{2} + \cdots + X_{n}$, will have $S
 
 Now, using the central limit theorem we get
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
-e^{-n}\displaystyle\sum^{n}_{k=0}\dfrac{2n^{k}}{k!} & = & \displaystyle\sum^{n}_{k=0}\mathbb{P}(S_{n} = k) & = & \mathbb{P}(S_{n}\leq n)
+\displaystyle\sum^{n}_{k=0}e^{-n}\dfrac{n^{k}}{k!} & = & \displaystyle\sum^{n}_{k=0}\mathbb{P}(S_{n} = k) & = & \mathbb{P}(S_{n}\leq n)
 \end{array}
 \end{equation*}
+```
+in which,
 
-in which, 
-
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 \mathbb{P}\left( \dfrac{S_{n} - n}{\sqrt{n}} \leq \dfrac{n - n}{\sqrt{n}}\right) & {\underset{n \to \infty}{\longrightarrow}} & \mathbb{P}(Z\leq 0) & = & \dfrac{1}{2}
 \end{array}
 \end{equation*}
+```
+$Z \sim N(0,1)$. Therefore, the proof is done.
 
-$Z \sim N(0,1)$. Therefore, the proof is done. 
-
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 \lim\limits_{n \to \infty}\displaystyle\sum^{n}_{k=0}e^{-n}\dfrac{n^{k}}{k!} & = & \dfrac{1}{2}.
 \end{array}
 \end{equation*}
+```
