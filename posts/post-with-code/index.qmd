@@ -3,6 +3,7 @@ title: "Newton-Raphson's method for Weibull distribution"
 author: "Wyara Silva"
 format: 
   html:
+    code-fold: true
     fig-width: 7
     fig-height: 5
 date: "2023-02-25"
@@ -10,15 +11,23 @@ categories: [R, code, analysis]
 title-block-banner: true
 ---
 
-Obtaining the maximum likelihood estimate using the Newton-Raphson's method  for the alpha parameter for the Weibull distribution.
+Let $X_{i} \sim \mbox{Weibull}(\alpha, \beta)$ then,
 
+\begin{equation*}
+f(x_{i}|\alpha, \beta) = \dfrac{\alpha}{\beta}\left(\dfrac{x_{i}}{\beta}\right)^{\alpha -1}\exp\left\{-\left(\dfrac{x_{i}}{\beta}\right)^{\alpha}\right\}, \hspace{0.5cm} \mbox{para} \hspace{0.5cm} x_{i}\geq 0.
+\end{equation*}
 
+In this continuous distribution we have that $\alpha>0$ is the shape parameter and  $\beta>0$ is the scale parameter.
+
+Suposse that $X_{1}, \cdots, X_{n}$ be a random sample with Weibull distribution $(\alpha,1)$
+
+Obtain the maximum likelihood estimate using the Newton-Raphson's method for the alpha parameter for the Weibull distribution.
 
 ```{r}
 #| warning: false
 library(tidyverse)
 
-dados = readr::read_table("Dados_Weibull.txt", col_names = FALSE)
+dados = read_table("Dados_Weibull.txt", col_names = FALSE)
 
 ggplot(dados, aes(X1)) +
   geom_histogram(aes(y=after_stat(density)), bins = 30, color="black", fill="grey")+
@@ -32,23 +41,39 @@ newton.raphson.w = function(x.dados, alpha.0=10, precisao = 1e-7, n=100){
     alpha.1 = alpha.0 - dlogLikW(alpha.0)/ddlogLikW(alpha.0)
     if(abs(alpha.1 - alpha.0) < precisao){
       res = list(alpha.1,i)
-      names(res) = c("alpha.estimated","n.iter")
+      names(res) = c("alpha.estimado","n.iter")
       return(res)
     }
     alpha.0 = alpha.1
   }
   print("with the number of iterations there was no convergence")
 }
-newton.raphson.w(dados$X1)
+
+newton.raphson.w(dados %>% .$X1)
 
 #simulation
-n = c(10,30,100,1000)
-estimativas = array(NA, dim=c(1, length(n)))
+n = seq(10,1000,10)
+
+estimativas = array(NA, dim=c(length(n),1))
 
 for (i in 1:length(n)){
   dat =  rweibull(n[i], shape=5, scale=1)
-  estimativas[,i] = newton.raphson.w(dat,2)$alpha.estimated
+  estimativas[i,] = newton.raphson.w(dat,2)$alpha.estimado
 }
 
-estimativas
+dados <- tibble(
+  estim = estimativas,
+  sim = n)
+
+ggplot(dados, 
+       aes(x = n,
+           y = estim, group=1)) + 
+  geom_point(color="blue") +
+  geom_line(y=5) +
+  labs(x="Sample size", y=expression("Estimate for"~alpha), colour = "Sample size")
+
 ```
+
+Therefore, the estimated alpha for the data provided was $\hat{\alpha}=4.9659$. Moreover, we can observe that in the simulation part, the larger the sample, the algorithm will have the better performance.
+
+

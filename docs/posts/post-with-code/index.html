@@ -118,7 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="../../styles.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../../styles.css">
 </head>
 <body class="nav-fixed">
 
@@ -205,56 +205,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Obtaining the maximum likelihood estimate using the Newton-Raphson’s method for the alpha parameter for the Weibull distribution.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Let <span class="math inline">\(X_{i} \sim \mbox{Weibull}(\alpha, \beta)\)</span> then,</p>
+<p><span class="math display">\[\begin{equation*}
+f(x_{i}|\alpha, \beta) = \dfrac{\alpha}{\beta}\left(\dfrac{x_{i}}{\beta}\right)^{\alpha -1}\exp\left\{-\left(\dfrac{x_{i}}{\beta}\right)^{\alpha}\right\}, \hspace{0.5cm} \mbox{para} \hspace{0.5cm} x_{i}\geq 0.
+\end{equation*}\]</span></p>
+<p>In this continuous distribution we have that <span class="math inline">\(\alpha&gt;0\)</span> is the shape parameter and <span class="math inline">\(\beta&gt;0\)</span> is the scale parameter.</p>
+<p>Suposse that <span class="math inline">\(X_{1}, \cdots, X_{n}\)</span> be a random sample with Weibull distribution <span class="math inline">\((\alpha,1)\)</span></p>
+<p>Obtain the maximum likelihood estimate using the Newton-Raphson’s method for the alpha parameter for the Weibull distribution.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dados</span> <span class="op">=</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_table.html">read_table</a></span><span class="op">(</span><span class="st">"Dados_Weibull.txt"</span>, col_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">dados</span> <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_table.html">read_table</a></span><span class="op">(</span><span class="st">"Dados_Weibull.txt"</span>, col_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">X1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, bins <span class="op">=</span> <span class="fl">30</span>, color<span class="op">=</span><span class="st">"black"</span>, fill<span class="op">=</span><span class="st">"grey"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span>alpha<span class="op">=</span><span class="fl">.2</span>, linetype <span class="op">=</span> <span class="fl">2</span>, fill<span class="op">=</span><span class="st">"light blue"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Data"</span>, y <span class="op">=</span> <span class="st">"Density"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">newton.raphson.w</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x.dados</span>, <span class="va">alpha.0</span><span class="op">=</span><span class="fl">10</span>, <span class="va">precisao</span> <span class="op">=</span> <span class="fl">1e-7</span>, <span class="va">n</span><span class="op">=</span><span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">newton.raphson.w</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x.dados</span>, <span class="va">alpha.0</span><span class="op">=</span><span class="fl">10</span>, <span class="va">precisao</span> <span class="op">=</span> <span class="fl">1e-7</span>, <span class="va">n</span><span class="op">=</span><span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">dlogLikW</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">{</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x.dados</span><span class="op">)</span><span class="op">/</span><span class="va">y</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">x.dados</span><span class="op">)</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">x.dados</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">x.dados</span><span class="op">^</span><span class="va">y</span><span class="op">)</span><span class="op">)</span><span class="op">}</span></span>
 <span>  <span class="va">ddlogLikW</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">z</span><span class="op">)</span><span class="op">{</span><span class="op">-</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x.dados</span><span class="op">)</span><span class="op">/</span><span class="va">z</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">x.dados</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">x.dados</span><span class="op">^</span><span class="va">z</span><span class="op">)</span><span class="op">)</span><span class="op">}</span></span>
 <span>  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">alpha.1</span> <span class="op">=</span> <span class="va">alpha.0</span> <span class="op">-</span> <span class="fu">dlogLikW</span><span class="op">(</span><span class="va">alpha.0</span><span class="op">)</span><span class="op">/</span><span class="fu">ddlogLikW</span><span class="op">(</span><span class="va">alpha.0</span><span class="op">)</span></span>
 <span>    <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">alpha.1</span> <span class="op">-</span> <span class="va">alpha.0</span><span class="op">)</span> <span class="op">&lt;</span> <span class="va">precisao</span><span class="op">)</span><span class="op">{</span></span>
 <span>      <span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">alpha.1</span>,<span class="va">i</span><span class="op">)</span></span>
-<span>      <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"alpha.estimated"</span>,<span class="st">"n.iter"</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"alpha.estimado"</span>,<span class="st">"n.iter"</span><span class="op">)</span></span>
 <span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
 <span>    <span class="op">}</span></span>
 <span>    <span class="va">alpha.0</span> <span class="op">=</span> <span class="va">alpha.1</span></span>
 <span>  <span class="op">}</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"with the number of iterations there was no convergence"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="fu">newton.raphson.w</span><span class="op">(</span><span class="va">dados</span><span class="op">$</span><span class="va">X1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$alpha.estimated
+<span></span>
+<span><span class="fu">newton.raphson.w</span><span class="op">(</span><span class="va">dados</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="va">.</span><span class="op">$</span><span class="va">X1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>$alpha.estimado
 [1] 4.965997
 
 $n.iter
 [1] 5</code></pre>
 </div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#simulation</span></span>
-<span><span class="va">n</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">30</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
-<span><span class="va">estimativas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span><span class="op">(</span><span class="cn">NA</span>, dim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#simulation</span></span>
+<span><span class="va">n</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">1000</span>,<span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">estimativas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span><span class="op">(</span><span class="cn">NA</span>, dim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">dat</span> <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/stats/Weibull.html">rweibull</a></span><span class="op">(</span><span class="va">n</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, shape<span class="op">=</span><span class="fl">5</span>, scale<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span>  <span class="va">estimativas</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span> <span class="op">=</span> <span class="fu">newton.raphson.w</span><span class="op">(</span><span class="va">dat</span>,<span class="fl">2</span><span class="op">)</span><span class="op">$</span><span class="va">alpha.estimated</span></span>
+<span>  <span class="va">estimativas</span><span class="op">[</span><span class="va">i</span>,<span class="op">]</span> <span class="op">=</span> <span class="fu">newton.raphson.w</span><span class="op">(</span><span class="va">dat</span>,<span class="fl">2</span><span class="op">)</span><span class="op">$</span><span class="va">alpha.estimado</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">estimativas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         [,1]     [,2]     [,3]     [,4]
-[1,] 5.215847 4.987638 5.153054 5.005254</code></pre>
+<span><span class="va">dados</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  estim <span class="op">=</span> <span class="va">estimativas</span>,</span>
+<span>  sim <span class="op">=</span> <span class="va">n</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dados</span>, </span>
+<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">n</span>,</span>
+<span>           y <span class="op">=</span> <span class="va">estim</span>, group<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>y<span class="op">=</span><span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Sample size"</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op">(</span><span class="st">"Estimate for"</span><span class="op">~</span><span class="va">alpha</span><span class="op">)</span>, colour <span class="op">=</span> <span class="st">"Sample size"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Therefore, the estimated alpha for the data provided was <span class="math inline">\(\hat{\alpha}=4.9659\)</span>. Moreover, we can observe that in the simulation part, the larger the sample, the algorithm will have the better performance.</p>
 
 
 
