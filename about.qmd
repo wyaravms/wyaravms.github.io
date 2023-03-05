@@ -9,11 +9,11 @@ toc: true
 toc-depth: 6
 toc-location: right
 comments: false
-
 ---
+
 ## Overview
 
-Currently: Doctorate student in Statistics from the Graduate Program in Statistics at UFMG.
+Currently: PhD student in Statistics from the Graduate Program in Statistics at UFMG.
 
 ## Education
 
@@ -35,4 +35,3 @@ Federal University of Piauí (UFPI)
 <b>E Silva, Wyara Vanesa Moura</b>; Do Nascimento, Fernando Ferraz (2019) [MCMC4Extremes: an R package for Bayesian inference for extremes and its extensions](https://doi.org/10.1080/03610918.2019.1653914), Communications in Statistics - Simulation and Computation, 51:2, 432-442.
 
 Ferraz Do Nascimento, Fernando; <b>Moura E Silva, Wyara Vanesa</b> (2017) [A Bayesian model for multiple change point to extremes, with application to environmental and financial data](https://doi.org/10.1080/02664763.2016.1254733), Journal of Applied Statistics, 44:13, 2410-2426.
-
