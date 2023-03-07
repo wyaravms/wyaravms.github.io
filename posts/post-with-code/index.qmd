@@ -13,11 +13,12 @@ title-block-banner: true
 
 Let $X_{i} \sim \mbox{Weibull}(\alpha, \beta)$ then,
 
+```{=tex}
 \begin{equation*}
 f(x_{i}|\alpha, \beta) = \dfrac{\alpha}{\beta}\left(\dfrac{x_{i}}{\beta}\right)^{\alpha -1}\exp\left\{-\left(\dfrac{x_{i}}{\beta}\right)^{\alpha}\right\}, \hspace{0.5cm} \mbox{para} \hspace{0.5cm} x_{i}\geq 0.
 \end{equation*}
-
-In this continuous distribution we have that $\alpha>0$ is the shape parameter and  $\beta>0$ is the scale parameter.
+```
+In this continuous distribution we have that $\alpha>0$ is the shape parameter and $\beta>0$ is the scale parameter.
 
 Suposse that $X_{1}, \cdots, X_{n}$ be a random sample with Weibull distribution $(\alpha,1)$
 
@@ -65,15 +66,13 @@ dados <- tibble(
   estim = estimativas,
   sim = n)
 
-ggplot(dados, 
-       aes(x = n,
-           y = estim, group=1)) + 
-  geom_point(color="blue") +
-  geom_line(y=5) +
-  labs(x="Sample size", y=expression("Estimate for"~alpha), colour = "Sample size")
+ggplot(dados, aes(x = n,
+                  y = estim, 
+                  group=1)) + 
+geom_point(color="blue") +
+geom_line(y=5) +
+labs(x="Sample size", y=expression("Estimate for"~alpha), colour = "Sample size")
 
 ```
 
 Therefore, the estimated alpha for the data provided was $\hat{\alpha}=4.9659$. Moreover, we can observe that in the simulation part, the larger the sample, the algorithm will have the better performance.
-
-
