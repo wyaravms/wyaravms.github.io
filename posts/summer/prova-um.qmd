@@ -10,7 +10,7 @@ date: "2023-03-02"
 categories: [probability, tests, expected value]
 ---
 
-This summer, I attended [The Summer Program in Mathematics, UFMG 2023](https://sites.google.com/view/veraomatufmg2023/p%C3%A1gina-inicial?authuser=0) and I took the Introduction of Probability Theory course (Professor: Bernando Nunes Borges de Lima (UFMG)), below you can find the first test of the course with the answers. 
+This summer, I attended [The Summer Program in Mathematics, UFMG 2023](https://sites.google.com/view/veraomatufmg2023/p%C3%A1gina-inicial?authuser=0) and I took the Introduction of Probability Theory course, below you can find the first test of the course with the answers. 
 
 
 ::: hidden
