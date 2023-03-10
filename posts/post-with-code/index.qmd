@@ -27,10 +27,12 @@ Obtain the maximum likelihood estimate using the Newton-Raphson's method for the
 ```{r}
 #| warning: false
 library(tidyverse)
+set.seed(25)
 
 dados = read_table("Dados_Weibull.txt", col_names = FALSE)
 
-ggplot(dados, aes(X1)) +
+dados %>%
+ggplot(aes(X1)) +
   geom_histogram(aes(y=after_stat(density)), bins = 30, color="black", fill="grey")+
   geom_density(alpha=.2, linetype = 2, fill="light blue") +
   labs(x="Data", y = "Density")
@@ -50,7 +52,11 @@ newton.raphson.w = function(x.dados, alpha.0=10, precisao = 1e-7, n=100){
   print("with the number of iterations there was no convergence")
 }
 
-newton.raphson.w(dados %>% .$X1)
+# This code uses the newton.raphson.w() function to estimate the parameters of the Weibull distribution
+# The function is applied to the data in the column "dados"
+dados %>%
+  pull() %>%
+  newton.raphson.w()
 
 #simulation
 n = seq(10,1000,10)
