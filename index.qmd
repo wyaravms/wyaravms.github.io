@@ -8,7 +8,7 @@ format:
     toc-location: right
 about:
   template: trestles
-  image: profile.jpg
+  image: profile2.jpg
   image-width: 12em
   image-shape: rounded
   links:
