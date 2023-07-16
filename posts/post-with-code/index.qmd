@@ -1,6 +1,6 @@
 ---
 title: "Newton-Raphson's method for Weibull distribution"
-author: "Wyara Silva"
+author: "Wyara Moura"
 format: 
   html:
     code-fold: true

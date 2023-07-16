@@ -3,7 +3,7 @@ title: "Materials from Probability and Inference Courses"
 format: 
   html:
     page-layout: article
-author: "Wyara Silva"
+author: "Wyara Moura"
 date: "2023-02-25"
 categories: [tests, latex, probability, inference]
 title-block-banner: true
