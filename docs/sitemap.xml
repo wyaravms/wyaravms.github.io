@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wyaravms.github.io/about.html</loc>
-    <lastmod>2023-07-16T17:04:30.507Z</lastmod>
+    <lastmod>2023-07-16T17:31:49.036Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/index.html</loc>
-    <lastmod>2023-07-16T17:04:32.966Z</lastmod>
+    <lastmod>2023-07-16T17:31:47.350Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/home.html</loc>
-    <lastmod>2023-07-16T17:30:13.665Z</lastmod>
+    <lastmod>2023-07-16T17:31:48.490Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/posts/central limit theorem/question-poisson.html</loc>
@@ -55,5 +55,9 @@
   <url>
     <loc>https://wyaravms.github.io/brook-lemma.html</loc>
     <lastmod>2023-07-16T17:28:27.469Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wyaravms.github.io/posts/brook-lemma/brook-lemma.html</loc>
+    <lastmod>2023-07-16T17:31:53.084Z</lastmod>
   </url>
 </urlset>
