@@ -1,0 +1,185 @@
+---
+title: "Brook’s Lemma"
+title-block-banner: true
+format:
+  html:
+    page-layout: article
+    html-math-method: mathjax
+author: "Wyara Moura"
+date: "2023-07-16"
+categories: [probability, brook's lemma, spatial statistics]
+
+---
+
+# Question (Banerjee et al., 2014)
+
+Suppose $Y_{1}$ and $Y_{2}$ are both binary variables,
+and that their joint distribution is defined through conditional logit models. That is,
+
+
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+\log \left[ \dfrac{p(Y_{1} = 1 | Y_{2})}{p(Y_{1} = 0 | Y_{2})} \right] & = & \alpha_{0} + \alpha_{1}Y_{2} & \mbox{and} &  \log \left[ \dfrac{p(Y_{2} = 1 | Y_{1})}{p(Y_{2} = 0 | Y_{1})} \right] & = & \beta_{0} + \beta_{1}Y_{1}\\[12pt]
+\end{array}
+\end{equation*}
+```
+
+Obtain the joint distribution of $Y_{1}$ and $Y_{2}$.
+
+## Answer:
+
+
+Given the following logits:
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+\log \left[ \dfrac{p(Y_{1} = 1 | Y_{2})}{p(Y_{1} = 0 | Y_{2})} \right] & = & \alpha_{0} + \alpha_{1}Y_{2} & , &  \log \left[ \dfrac{p(Y_{2} = 1 | Y_{1})}{p(Y_{2} = 0 | Y_{1})} \right] & = & \beta_{0} + \beta_{1}Y_{1}\\[12pt]
+\end{array}
+\end{equation*}
+```
+
+
+We will obtain the joint distribution $p(Y_{1}, Y_{2})$ using the Lemma of Brook. Therefore, as a result of the Lemma of Brook, we have that:
+
+```{=tex}
+\begin{equation*}
+\begin{array}{lrlll}
+p(Y_{1}, Y_{2}) & = &\dfrac{p(Y_{1}|Y_{2})}{p(Y_{1}=y_{1,0}|Y_{2})}\cdot \dfrac{p(Y_{2}|Y_{1}=y_{1,0})}{p(Y_{2}=y_{2,0}|Y_{1}=y_{1,0})}\cdot p(Y_{1}=y_{1,0}, Y_{2}=y_{2,0})\\[15pt]
+
+\end{array}
+\end{equation*}
+```
+
+In this question, we will use $Y_{0}$ = ($y_{1,0}=0, y_{2,0}=0$), In other words, the expression of the joint distribution above will be:
+
+```{=tex}
+\begin{equation*}
+\begin{array}{lrlll}
+p(Y_{1}, Y_{2}) & = &\dfrac{p(Y_{1}|Y_{2})}{p(Y_{1}=0|Y_{2})}\cdot \dfrac{p(Y_{2}|Y_{1}=0)}{p(Y_{2}=0|Y_{1}=0)}\cdot p(Y_{1}=0, Y_{2}=0) \\[12pt]
+\end{array}
+\end{equation*}
+```
+
+Therefore, since the random variables $Y_{1}$ and $Y_{2}$ are binary and considering some results from the logit function, we can arrive at the following expressions:
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+\dfrac{p(Y_{1} = 1 | Y_{2})}{p(Y_{1} = 0 | Y_{2})} & = & \exp{\{\alpha_{0} + \alpha_{1}Y_{2}\}} & , &  \dfrac{p(Y_{2} = 1 | Y_{1})}{p(Y_{2} = 0 | Y_{1})} & = & \exp{\{\beta_{0} + \beta_{1}Y_{1}\}}\\[12pt]
+\end{array}
+\end{equation*}
+```
+\noindent where,
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+p(Y_{1} = 1 | Y_{2}) & = & \dfrac{\exp{\{\alpha_{0} + \alpha_{1}Y_{2}\}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}Y_{2}\}}} \\[15pt]
+
+p(Y_{2} = 1 | Y_{1}) & = & \dfrac{\exp{\{\beta_{0} + \beta_{1}Y_{1}\}}}{1 + \exp{\{\beta_{0} + \beta_{1}Y_{1}\}}}\\[12pt]
+\end{array}
+\end{equation*}
+```
+\noindent thus, we can obtain:
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+p(Y_{1} = y_{1} | Y_{2} = y_{2}) & = & \left[\dfrac{\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{y_{1}}\left[1 - \dfrac{\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{1 - y_{1}} \\[15pt]
+
+& = & \left[\dfrac{\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{y_{1}}\left[\dfrac{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\} - \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{1 - y_{1}} \\[15pt]
+
+& = & \left[\dfrac{\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{y_{1}}\left[\dfrac{1}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}\right]^{1 - y_{1}} \\[15pt]
+
+
+& = & \left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}}\left(1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{-y_{1} - 1 + y_{1}} \\[15pt]
+
+& = & \dfrac{\left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}}}{\left(1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)} \\[15pt]
+\end{array}
+\end{equation*}
+```
+
+Similarly, we can obtain the result for $p(Y_{2}=y_{2}|Y_{1})$, which is given by:
+```{=tex}
+\begin{equation*}
+\begin{array}{lclllll}
+p(Y_{2} = y_{2} | Y_{1} = y_{1}) & = & \left[\dfrac{\exp{\{\beta_{0} + \beta_{1}y_{1}\}}}{1 + \exp{\{\beta_{0} + \beta_{1}y_{1}\}}}\right]^{y_{2}}\left[1 - \dfrac{\exp{\{\beta_{0} + \beta_{1}y_{1}\}}}{1 + \exp{\{\beta_{0} + \beta_{1}y_{1}\}}}\right]^{1 - y_{2}} \\[15pt]
+
+& = & \left[\dfrac{\exp{\{\beta_{0} + \beta_{1}y_{1}\}}}{1 + \exp{\{\beta_{0} + \beta_{1}y_{1}\}}}\right]^{y_{2}}\left[\dfrac{1}{1 + \exp{\{\beta_{0} + \beta_{1}y_{1}\}}}\right]^{1 - y_{2}} \\[15pt]
+
+& = & \dfrac{\left(\exp{\{\beta_{0} + \beta_{1}y_{1}\}}\right)^{y_{2}}}{\left(1 + \exp{\{\beta_{0} + \beta_{1}y_{1}\}}\right)} \\[15pt]
+\end{array}
+\end{equation*}
+```
+
+Using the derived expressions, we can obtain the joint distribution $p(Y_{1}, Y_{2})$:
+```{=tex}
+\begin{equation*}
+\begin{array}{lrlll}
+p(Y_{1} = y_{1}, Y_{2} = y_{2}) & = &\dfrac{p(Y_{1}= y_{1}|Y_{2}= y_{2})}{p(Y_{1}=0|Y_{2}= y_{2})}\cdot \dfrac{p(Y_{2}=y_{2}|Y_{1}=0)}{p(Y_{2}=0|Y_{1}=0)}\cdot p(Y_{1}=0, Y_{2}=0) \\[15pt]
+
+& = & \dfrac{\dfrac{\left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}}}{\left(1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)}}{\dfrac{1}{1 + \exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}}} \cdot  \dfrac{\dfrac{\left(\exp{\{\beta_{0}\}}\right)^{y_{2}}}{\left(1 + \exp{\{\beta_{0}\}}\right)}}{\dfrac{1}{\left(1 + \exp{\{\beta_{0}\}}\right)}} \cdot p(Y_{1}=0, Y_{2}=0)  \\[25pt]
+
+& = & \left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{y_{2}} \cdot p(Y_{1}=0, Y_{2}=0) \\[15pt]
+\end{array}
+\end{equation*}
+```
+
+Now, we can find $p(Y_{1}=0, Y_{2}=0)$, since we have that,
+```{=tex}
+\begin{equation*}
+\begin{array}{rclllll}
+\displaystyle\sum_{y_{1}=0}^{1} \displaystyle\sum_{y_{2}=0}^{1}p(Y_{1} = y_{1}, Y_{2} = y_{2}) & = & 1\\[15pt]
+\end{array}
+\end{equation*}
+```
+
+\noindent thus,
+```{=tex}
+\begin{equation*}
+\begin{array}{rclllll}
+\displaystyle\sum_{y_{1}=0}^{1} \displaystyle\sum_{y_{2}=0}^{1}\left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{y_{2}} \cdot p(Y_{1}=0, Y_{2}=0) & = & 1\\[15pt]
+
+\end{array}
+\end{equation*}
+```
+
+```{=tex}
+\begin{equation*}
+\begin{array}{rclllll}
+p(Y_{1}=0, Y_{2}=0) \left[ \left(\exp{\{\alpha_{0} + \alpha_{1}\cdot0\}}\right)^{0} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{0} \right. + \\[15pt]
+
+\left. + \left(\exp{\{\alpha_{0} + \alpha_{1}\cdot 0\}}\right)^{1} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{0} + \left(\exp{\{\alpha_{0} + \alpha_{1}\cdot 1\}}\right)^{0} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{1}\right]  . + \\[15pt]
+
+\left. + \left(\exp{\{\alpha_{0} + \alpha_{1}\cdot 1\}}\right)^{1} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{1}\right]
+& = & 1\\[15pt]
+\end{array}
+\end{equation*}
+```
+
+Hence, we can conclude that $p(Y_{1}=0, Y_{2}=0)$ is given by,
+```{=tex}
+\begin{equation*}
+\begin{array}{lrlll}
+
+p(Y_{1}=0, Y_{2}=0) & = &  \left[1 + \exp{\{\alpha_{0}\}} + \exp{\{\beta_{0}\}} + \exp{\{\alpha_{0} + \alpha_{1}\}}\exp{\{\beta_{0}\}}\right]^{-1}\\[15pt]
+
+\end{array}
+\end{equation*}
+```
+
+Therefore, using all the results obtained, it follows that the joint distribution $p(Y_{1}, Y_{2})$ is given by:
+```{=tex}
+\begin{equation*}
+\begin{array}{lrlll}
+p(Y_{1} = y_{1}, Y_{2} = y_{2}) & = & \left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{y_{2}} \cdot p(Y_{1}=0, Y_{2}=0) \\[15pt]
+
+p(Y_{1} = y_{1}, Y_{2} = y_{2}) & = & \dfrac{\left(\exp{\{\alpha_{0} + \alpha_{1}y_{2}\}}\right)^{y_{1}} \cdot  \left(\exp{\{\beta_{0}\}}\right)^{y_{2}}}{\left[1 + \exp{\{\alpha_{0}\}} + \exp{\{\beta_{0}\}} + \exp{\{\alpha_{0} + \alpha_{1}\}}\exp{\{\beta_{0}\}}\right]} \\[15pt]
+\end{array}
+\end{equation*}
+
+```
+
+## References
+
+Banerjee, S., Carlin, B. P., & Gelfand, A. E. (2014). Hierarchical modeling and analysis for spatial data. CRC press.
+
+---

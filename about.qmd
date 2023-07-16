@@ -1,5 +1,5 @@
 ---
-title: "Wyara Silva"
+title: "Wyara Moura"
 format: html
 editor: visual
 image-shape: round
