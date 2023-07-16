@@ -6,7 +6,7 @@ format:
   html:
     page-layout: article
     html-math-method: mathjax
-author: "Wyara Silva"
+author: "Wyara Moura"
 date: "2023-03-01"
 categories: [probability, central limit theorem, poisson]
 ---

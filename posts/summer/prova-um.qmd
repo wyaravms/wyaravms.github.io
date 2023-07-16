@@ -5,7 +5,7 @@ format:
   html:
     page-layout: article
     html-math-method: mathjax
-author: "Wyara Silva"
+author: "Wyara Moura"
 date: "2023-03-02"
 categories: [probability, tests, expected value]
 ---
