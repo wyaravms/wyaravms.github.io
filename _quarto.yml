@@ -21,10 +21,12 @@ website:
       - href: about.qmd
         text: Resume
     right:
-      - icon: twitter
-        href: https://twitter.com/wyaravms
       - icon: github
         href: https://github.com/wyaravms
+      - icon: twitter
+        href: https://twitter.com/wyaravms
+      - icon: instagram
+        href: https://instagram.com/wvmouras
   page-footer: 
     left: "Website made with [Quarto](https://quarto.org/) by Wyara Silva, 2023. Hosted by [GitHub Pages](https://pages.github.com/)." 
     right:
@@ -32,6 +34,8 @@ website:
         href: https://github.com/wyaravms/
       - icon: twitter
         href: https://twitter.com/wyaravms
+      - icon: instagram
+        href: https://instagram.com/wvmouras  
       - icon: envelope
         href: mailto:wyaravms@gmail.com  
 
