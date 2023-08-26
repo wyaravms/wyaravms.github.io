@@ -28,7 +28,7 @@ website:
       - icon: instagram
         href: https://instagram.com/wvmouras
   page-footer: 
-    left: "Website made with [Quarto](https://quarto.org/) by Wyara Silva, 2023. Hosted by [GitHub Pages](https://pages.github.com/)." 
+    left: "Website made with [Quarto](https://quarto.org/) by Wyara Moura, 2023. Hosted by [GitHub Pages](https://pages.github.com/)." 
     right:
       - icon: github
         href: https://github.com/wyaravms/
