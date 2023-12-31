@@ -9,6 +9,7 @@
   {
     "listing": "/home.html",
     "items": [
+      "/posts/quadratic-form/quadratic-form.html",
       "/posts/brook-lemma/brook-lemma.html",
       "/posts/summer/prova-um.html",
       "/posts/central limit theorem/question-poisson.html",
