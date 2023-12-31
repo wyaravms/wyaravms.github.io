@@ -1,0 +1,169 @@
+---
+title: "Linear Regression (Question)"
+title-block-banner: true
+format:
+  html:
+    page-layout: article
+    html-math-method: mathjax
+author: "Wyara Moura"
+date: "2023-12-31"
+categories: [linear regression, quadratic forms, estimator]
+---
+
+::: hidden
+
+```{=tex}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\arraystretch}{1.2}
+```
+:::
+
+# Question
+
+Let $\mathbf{X} = (X_{1}, X_{2}, \cdots, X_{n})^{\top}$ be a vector of independent and identically distributed random variables with $\mathbb{E}(X_{i})=\mu$ e $\mathbb{V}ar(X_{i})=\sigma^2$, $i=\{1,2,\cdots, n \}$. Thus, let $Q=\displaystyle\sum_{i=1}^{n}(X_{i}-\bar{X})^2$.
+
+Considering $\mathbf{1}_{n}=[1, \cdots, 1]^{\top}$, we have that $Q$ in matrix form will be given by:
+
+\begin{equation*}
+\begin{array}{rclllll}
+Q & = & \displaystyle\sum_{i=1}^{n}(X_{i}-\bar{X})^2 & = & (\mathbf{X} - \mathbf{1}_{n}\bar{X})^{\top}(\mathbf{X} - \mathbf{1}_{n}\bar{X}) \\[8pt]
+
+& & & = & \mathbf{X}^{\top}\mathbf{X} - \mathbf{X}^{\top}\mathbf{1}_{n}\bar{X} - \bar{X}\mathbf{1}_{n}^{\top}\mathbf{X} + \bar{X}\mathbf{1}_{n}^{\top}\mathbf{1}_{n}\bar{X} \\[8pt]
+
+& & & = & \mathbf{X}^{\top}\mathbf{X} - \mathbf{X}^{\top}\dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X}  - \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X} + \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X} \\[8pt]
+
+
+& & & = & \mathbf{X}^{\top}\mathbf{X} - \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X}  - \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X} + \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X} \\[8pt]
+
+& & & = & \mathbf{X}^{\top}\mathbf{X} - \dfrac{1}{n}\mathbf{X}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{X} \\[8pt]
+
+& & & = & \mathbf{X}^{\top} \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right] \mathbf{X} \\[8pt]
+\end{array}
+\end{equation*}
+
+
+\(a\) Show that the matrix of the quadratic form $\dfrac{Q}{\sigma^2}$ is idempotent
+
+## Solution
+
+We have that:
+
+\begin{equation*}
+\begin{array}{rclllll}
+\dfrac{Q}{\sigma^2} & = & \dfrac{1}{\sigma^2} \cdot \mathbf{X}^{\top} \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right] \mathbf{X} \\[10pt]
+\end{array}
+\end{equation*}
+
+The quadratic form matrix $\dfrac{Q}{\sigma^2}$ is given by: $\mathbf{M} = \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right]$ in which
+
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbf{M}\times\mathbf{M} & = & \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right]\left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right] \\[10pt]
+
+& = & \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top} + \dfrac{1}{n^2}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}  \\[10pt]
+
+& = & \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top} + \dfrac{1}{n^2}\mathbf{1}_{n}\cdot n\cdot\mathbf{1}_{n}^{\top}  \\[10pt]
+
+& = & \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}  \\[10pt]
+
+& = & \mathbf{M} \\[10pt]
+\end{array}
+\end{equation*}
+
+Therefore, $\mathbf{M} = \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right]$ is idempotent.
+
+\(b\) Show that $\dfrac{Q}{n(n-1)}$ is an unbiased estimator of $\mathbb{V}\mbox{ar}(\bar{X})$.
+
+## Solution
+
+Initially we will find $\mathbb{V}\mbox{ar}(\bar{X})$: 
+
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbb{V}\mbox{ar}(\bar{X}) & = & \mathbb{V}ar\left(\dfrac{\displaystyle\sum_{i=1}^{n}X_{i}}{n}\right) & = & \dfrac{1}{n^2} \mathbb{V}\mbox{ar}\left(\displaystyle\sum_{i=1}^{n}X_{i}\right) \\[15pt] 
+ & \stackrel{v.a. ind.}{=} & \dfrac{1}{n^2} \displaystyle\sum_{i=1}^{n}\mathbb{V}ar\left(X_{i}\right) & \stackrel{i.i.d.}{=} & \dfrac{1}{n^2} \cdot n\cdot\sigma^2 \\[10pt]
+
+& = & \dfrac{\sigma^2}{n} \\[10pt]
+
+\end{array}
+\end{equation*}
+
+Now, to show that $\dfrac{Q}{n(n-1)}$ is an unbiased estimator of $\mathbb{V}\mbox{ar}(\bar{X})$, we need to calculate the value expected value of this estimator and this expected value must be equal to $\dfrac{\sigma^2}{n}$. So, to do this we will use the theorem:
+
+\begin{theorem}
+If $\mathbf{y}$ is a random vector with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$ and if $\mathbf{A}$ is a symmetric matrix of constants, then
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbb{E}[\mathbf{y}^{\top}\mathbf{A}\mathbf{y}] & = & \mbox{tr}(\mathbf{A}\boldsymbol{\Sigma}) + \boldsymbol{\mu}^{\top}\mathbf{A}\boldsymbol{\mu}. 
+\end{array}
+\end{equation*}
+\end{theorem}
+
+Thus,
+
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbb{E}\left[\dfrac{Q}{n(n-1)}\right] & = & \dfrac{1}{n(n-1)} \left\{ \mbox{tr}\left[ \left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\sigma^2\cdot \mathbf{I}_{n} \right] + \mu \cdot \mathbf{1}_{n}^{\top} \left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\mathbf{1}_{n}\cdot \mu \right\} \\[10pt]
+
+& = & \dfrac{1}{n(n-1)} \left\{ \sigma^2 \mbox{tr}\left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right) + \mu^2 \cdot \mathbf{1}_{n}^{\top}\mathbf{1}_{n} -  \mu^2 \cdot \dfrac{1}{n}\mathbf{1}_{n}^{\top}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{1}_{n}\right\} \\[10pt]
+
+& = & \dfrac{1}{n(n-1)} \left\{ \sigma^2 \left[\mbox{tr}\left( \mathbf{I}_{n}\right)  - \mbox{tr}\left( \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\right] + \mu^2 \cdot n -  \mu^2 \cdot\dfrac{1}{n}n^2\right\} \\[10pt]
+
+& = & \dfrac{1}{n(n-1)} \left\{ \sigma^2 \left[n  - \dfrac{1}{n}\mbox{tr}\left( \mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\right] + \mu^2 \cdot n -  \mu^2 \cdot n\right\} \\[10pt]
+
+& = & \dfrac{1}{n(n-1)} \left[ \sigma^2 \left(n  - \dfrac{1}{n}n\right) \right] \\[10pt]
+
+& = &  \dfrac{1}{n(n-1)} \left[ \sigma^2 \left(n  - 1\right) \right] \\[10pt]
+
+& = & \dfrac{\sigma^2}{n}  \\[10pt]
+\end{array}
+\end{equation*}
+
+as we wanted to demonstrate.
+
+\(c\) Calculate the variance of $\dfrac{Q}{n(n-1)}$ under the assumption that X has a normal distribution.
+
+## Solution
+
+So, the variance of $\dfrac{Q}{n(n-1)}$ will be calculated under the assumption that $\mathbf{X}$ follows a normal distribution. To do this, we will use the following theorem:
+
+\begin{theorem}
+If $\mathbf{y}$ is a random vector with distribution $\mathcal{N}_{n}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$, and if $\mathbf{A}$ is a symmetric matrix of constants, then
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbb{V}\mathrm{ar}[\mathbf{y}^{\top}\mathbf{A}\mathbf{y}] & = & 2 \mathrm{tr}[(\mathbf{A}\boldsymbol{\Sigma})^2] + 4\boldsymbol{\mu}^{\top}\mathbf{A}\boldsymbol{\Sigma}\mathbf{A}\boldsymbol{\mu}. 
+\end{array}
+\end{equation*}
+\end{theorem}
+
+
+Thus,
+
+\begin{equation*}
+\begin{array}{rclllll}
+\mathbb{V}\mbox{ar}\left[\dfrac{Q}{n(n-1)}\right] & = & \dfrac{1}{n^2(n-1)^2} \mathbb{V}\mbox{ar}(Q) \\[10pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \mathbb{V}\mbox{ar}\left( \mathbf{X}^{\top} \left[ \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right] \mathbf{X}\right)  \\[10pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left\{ 2\cdot\mbox{tr}\left(\left[ \left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\sigma^2\cdot \mathbf{I}_{n} \right]^2 \right) +  \right. \\[10pt]
+
+& & + \; \left. 4\mu \cdot \mathbf{1}_{n}^{\top} \left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\sigma^2\cdot \mathbf{I}_{n}\left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\mathbf{1}_{n}\cdot \mu \right\}  \\[10pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left\{ 2\sigma^4\cdot\mbox{tr}\left[\left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)^2 \right] +  4\mu^2\sigma^2 \cdot \mathbf{1}_{n}^{\top} \left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\mathbf{1}_{n} \right\}  \\[12pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left[ 2\sigma^4\cdot\mbox{tr}\left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)  +  4\mu^2\sigma^2 \cdot\left( \mathbf{1}_{n}^{\top} \mathbf{1}_{n} - \dfrac{1}{n}\mathbf{1}_{n}^{\top} \mathbf{1}_{n}\mathbf{1}_{n}^{\top}\mathbf{1}_{n}\right) \right]   \\[12pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left[ 2\sigma^4\cdot\mbox{tr}\left( \mathbf{I}_{n} - \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)  +  4\mu^2\sigma^2 \cdot\left( n - \dfrac{1}{n}n^2\right) \right]   \\[10pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left[ 2\sigma^4\cdot\left[\mbox{tr}\left( \mathbf{I}_{n}\right)  - \mbox{tr}\left( \dfrac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\right)\right]  +  4\mu^2\sigma^2 \cdot\left( n - n\right) \right]   \\[10pt]
+
+& = & \dfrac{1}{n^2(n-1)^2} \left[ 2\sigma^4\cdot\left(n-1\right) \right]   \\[10pt]
+
+& = & \dfrac{2\sigma^4}{n^2(n-1)} \\[10pt]
+
+\end{array}
+\end{equation*}
+
+as we wanted to demonstrate.
