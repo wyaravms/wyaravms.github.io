@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wyaravms.github.io/about.html</loc>
-    <lastmod>2023-12-31T15:00:41.329Z</lastmod>
+    <lastmod>2024-01-02T11:15:52.096Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/index.html</loc>
-    <lastmod>2023-12-31T15:00:40.133Z</lastmod>
+    <lastmod>2024-01-02T11:15:50.779Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/home.html</loc>
-    <lastmod>2023-12-31T15:00:40.814Z</lastmod>
+    <lastmod>2024-01-02T11:16:00.168Z</lastmod>
   </url>
   <url>
     <loc>https://wyaravms.github.io/posts/central limit theorem/question-poisson.html</loc>
@@ -63,5 +63,9 @@
   <url>
     <loc>https://wyaravms.github.io/posts/quadratic-form/quadratic-form.html</loc>
     <lastmod>2023-12-31T15:00:39.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wyaravms.github.io/posts/characteristic-function/characteristic-function.html</loc>
+    <lastmod>2024-01-02T11:15:54.728Z</lastmod>
   </url>
 </urlset>

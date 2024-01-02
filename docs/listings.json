@@ -9,6 +9,7 @@
   {
     "listing": "/home.html",
     "items": [
+      "/posts/characteristic-function/characteristic-function.html",
       "/posts/quadratic-form/quadratic-form.html",
       "/posts/brook-lemma/brook-lemma.html",
       "/posts/summer/prova-um.html",
