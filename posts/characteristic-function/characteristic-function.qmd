@@ -7,7 +7,7 @@ format:
     html-math-method: mathjax
 author: "Wyara Moura"
 date: "2024-1-2"
-categories: [characteristic function, independence, probability, continuity theorem]
+categories: [characteristic function, independence, probability, continuity theorem, resnick]
 ---
 
 ::: hidden
