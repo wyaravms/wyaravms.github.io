@@ -6,7 +6,7 @@ execute:
   freeze: auto
 
 website:
-  title: "wyaravms.github.io"
+  title: "Wyara Moura"
   page-navigation: true
   site-url: https://wyaravms.github.io/
   navbar:
