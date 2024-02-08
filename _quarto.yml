@@ -12,7 +12,7 @@ website:
   navbar:
     #background: "#264663"
     background: "#264663"
-    left:
+    right:
       - href: index.qmd
         text: Home
       - href: home.qmd
@@ -21,7 +21,6 @@ website:
         text: Photos
       - href: about.qmd
         text: Resume
-    right:
       - icon: github
         href: https://github.com/wyaravms
       - icon: twitter
