@@ -23,8 +23,8 @@ website:
     right:
       - icon: github
         href: https://github.com/wyaravms
-#      - icon: twitter
-#        href: https://x.com/wyaravms
+      - icon: twitter
+        href: https://x.com/wyaravms
 #      - icon: instagram
 #        href: https://instagram.com/wvmouras
   page-footer: 
