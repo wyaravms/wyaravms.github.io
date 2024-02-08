@@ -10,6 +10,7 @@ website:
   page-navigation: true
   site-url: https://wyaravms.github.io/
   navbar:
+    #background: "#264663"
     background: "#264663"
     left:
       - href: index.qmd

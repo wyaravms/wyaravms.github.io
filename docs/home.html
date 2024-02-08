@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -91,7 +99,35 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -99,45 +135,52 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Wyara Moura</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./home.html" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="./home.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pics.html">
- <span class="menu-text">Photos</span></a>
+    <a class="nav-link" href="./pics.html"> 
+<span class="menu-text">Photos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
- <span class="menu-text">Resume</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Resume</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/wyaravms"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/wyaravms"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/wyaravms"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -150,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -174,25 +217,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="characteristic function,independence,probability,continuity theorem,resnick" data-listing-date-sort="1704164400000" data-listing-file-modified-sort="1704194935050" data-listing-reading-time-sort="1.92">
+<div class="quarto-post image-right" data-index="0" data-categories="characteristic function,independence,probability,continuity theorem,resnick" data-listing-date-sort="1704164400000" data-listing-file-modified-sort="1704194935050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="384">
 <div class="thumbnail">
-<a href="./posts/characteristic-function/characteristic-function.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/characteristic-function/characteristic-function.html"></a></p>
+<p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a></p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/characteristic-function/characteristic-function.html">
 <h3 class="no-anchor listing-title">
-Characteristic Function (Question)
+<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">Characteristic Function (Question)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('characteristic function'); return false;">
 characteristic function
@@ -210,15 +250,14 @@ continuity theorem
 resnick
 </div>
 </div>
-<a href="./posts/characteristic-function/characteristic-function.html">
 <div class="listing-description">
-Suppose <span class="math inline">\(X_{n}\)</span> and <span class="math inline">\(Y_{n}\)</span> are independent for each <span class="math inline">\(n\)</span> and <span class="math display">\[\begin{equation*}
-\begin{array}{lc…</span>
+<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">Suppose <span class="math inline">\(X_{n}\)</span> and <span class="math inline">\(Y_{n}\)</span> are independent for each <span class="math inline">\(n\)</span> and <span class="math display">\[\begin{equation*}
+\begin{array}{lclllllll}
+X_{n} &amp; \Rightarrow &amp; X_{0}, \hspace{2ex} Y_{n} &amp; \Rightarrow…</span></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/characteristic-function/characteristic-function.html">
+<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">
 <div class="listing-date">
 Jan 2, 2024
 </div>
@@ -228,23 +267,19 @@ Wyara Moura
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="linear regression,quadratic forms,estimator" data-listing-date-sort="1703991600000" data-listing-file-modified-sort="1704034754290" data-listing-reading-time-sort="3.265">
+<div class="quarto-post image-right" data-index="1" data-categories="linear regression,quadratic forms,estimator" data-listing-date-sort="1703991600000" data-listing-file-modified-sort="1704034754290" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="653">
 <div class="thumbnail">
-<a href="./posts/quadratic-form/quadratic-form.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/quadratic-form/quadratic-form.html"></a></p>
+<p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a></p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/quadratic-form/quadratic-form.html">
 <h3 class="no-anchor listing-title">
-Linear Regression (Question)
+<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">Linear Regression (Question)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
 linear regression
@@ -256,14 +291,12 @@ quadratic forms
 estimator
 </div>
 </div>
-<a href="./posts/quadratic-form/quadratic-form.html">
 <div class="listing-description">
-Let <span class="math inline">\(\mathbf{X} = (X_{1}, X_{2}, \cdots, X_{n})^{\top}\)</span> be a vector of independent and identically distributed random variables with <span class="math inline">\(\mathbb{E}(X_{i})=\mu\)</span> e <span class="math inline">\(\mathbb{V}ar(X_{i…</span><span class="math inline"></span><span class="math inline"></span>
+<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">Let <span class="math inline">\(\mathbf{X} = (X_{1}, X_{2}, \cdots, X_{n})^{\top}\)</span> be a vector of independent and identically distributed random variables with <span class="math inline">\(\mathbb{E}(X_{i})=\mu\)</span> e <span class="math inline">\(\mathbb{V…</span><span class="math inline"></span><span class="math inline"></span></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/quadratic-form/quadratic-form.html">
+<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">
 <div class="listing-date">
 Dec 31, 2023
 </div>
@@ -273,48 +306,56 @@ Wyara Moura
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="brook" s="" lemma,spatial="" statistics,probability'="" data-listing-date-sort="1689476400000" data-listing-file-modified-sort="1689529240109" data-listing-reading-time-sort="3.265">
+<div class="quarto-post image-right" data-index="2" data-categories="brook" s="" lemma,spatial="" statistics,probability'="" data-listing-date-sort="1689476400000" data-listing-file-modified-sort="1689529240109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="653">
+
 <div class="thumbnail">
-<a href="./posts/brook-lemma/brook-lemma.html">
-<div class="thumbnail-image"></div>
+<a href="./posts/brook-lemma/brook-lemma.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
 </a>
 </div>
-<div class="body"><a href="./posts/brook-lemma/brook-lemma.html">
-<h3 class="no-anchor listing-title">Brook’s Lemma</h3>
-<div class="listing-subtitle"></div>
-</a>
+
+<div class="body">
+
+<h3 class="no-anchor listing-title"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">Brook’s Lemma</a></h3>
+<div class="listing-subtitle"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external"></a></div>
+
+ 
 <div class="listing-categories">
+
 <div class="listing-category" onclick="window.quartoListingCategory('brook's lemma'); return false;">brook's lemma</div>
+
 <div class="listing-category" onclick="window.quartoListingCategory('spatial statistics'); return false;">spatial statistics</div>
+
 <div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">probability</div>
-</div>
-<a href="./posts/brook-lemma/brook-lemma.html">
-<div class="delink listing-description">
-Suppose <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span> are both binary variables, and that their joint distribution is defined through conditional logit models. That is,
-</div>
-</a></div>
-<div class="metadata"><a href="./posts/brook-lemma/brook-lemma.html">
-<div class="listing-date">Jul 16, 2023</div>
-<div class="listing-author">Wyara Moura</div>
-</a></div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="probability,tests,expected value" data-listing-date-sort="1677726000000" data-listing-file-modified-sort="1689527027541" data-listing-reading-time-sort="3.81">
-<div class="thumbnail">
-<a href="./posts/summer/prova-um.html">
-<div class="thumbnail-image">
 
 </div>
-</a><p><a href="./posts/summer/prova-um.html"></a></p>
+ 
+
+<div class="delink listing-description"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">Suppose <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span> are both binary variables, and that their joint distribution is defined through conditional logit models. That is,</a></div>
+
+</div>
+<div class="metadata"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">
+<div class="listing-date">`Jul 16, 2023`{=html}</div>
+<div class="listing-author">Wyara Moura</div>
+
+</a></div>
+
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="probability,tests,expected value" data-listing-date-sort="1677726000000" data-listing-file-modified-sort="1689527027541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="762">
+<div class="thumbnail">
+<p><a href="./posts/summer/prova-um.html" class="no-external"></a></p><a href="./posts/summer/prova-um.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/summer/prova-um.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/summer/prova-um.html">
 <h3 class="no-anchor listing-title">
-Summer 2023
+<a href="./posts/summer/prova-um.html" class="no-external">Summer 2023</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/summer/prova-um.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
 probability
@@ -326,14 +367,12 @@ tests
 expected value
 </div>
 </div>
-<a href="./posts/summer/prova-um.html">
 <div class="listing-description">
-This summer, I…
+<a href="./posts/summer/prova-um.html" class="no-external">This summer, I attended ‘The Summer Program in Mathematics, UFMG 2023’ and I took the Introduction of Probability Theory course, below you can find the first test of the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/summer/prova-um.html">
+<a href="./posts/summer/prova-um.html" class="no-external">
 <div class="listing-date">
 Mar 2, 2023
 </div>
@@ -343,23 +382,19 @@ Wyara Moura
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="probability,central limit theorem,poisson" data-listing-date-sort="1677639600000" data-listing-file-modified-sort="1689527031323" data-listing-reading-time-sort="0.52">
+<div class="quarto-post image-right" data-index="4" data-categories="probability,central limit theorem,poisson" data-listing-date-sort="1677639600000" data-listing-file-modified-sort="1689527031323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
 <div class="thumbnail">
-<a href="./posts/central limit theorem/question-poisson.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/central limit theorem/question-poisson.html"></a></p>
+<p><a href="./posts/central limit theorem/question-poisson.html" class="no-external"></a></p><a href="./posts/central limit theorem/question-poisson.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/central limit theorem/question-poisson.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/central limit theorem/question-poisson.html">
 <h3 class="no-anchor listing-title">
-Central Limit Theorem (Question)
+<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Central Limit Theorem (Question)</a>
 </h3>
 <div class="listing-subtitle">
-Application of the central limit theorem involving Poisson distribution.
+<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Application of the central limit theorem involving Poisson distribution.</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
 probability
@@ -371,14 +406,12 @@ central limit theorem
 poisson
 </div>
 </div>
-<a href="./posts/central limit theorem/question-poisson.html">
 <div class="listing-description">
-Use the central limit theorem to verify that,
+<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Use the central limit theorem to verify that,</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/central limit theorem/question-poisson.html">
+<a href="./posts/central limit theorem/question-poisson.html" class="no-external">
 <div class="listing-date">
 Mar 1, 2023
 </div>
@@ -388,23 +421,19 @@ Wyara Moura
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="R,code,analysis" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1704034759211" data-listing-reading-time-sort="1.58">
+<div class="quarto-post image-right" data-index="5" data-categories="R,code,analysis" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1704034759211" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="304">
 <div class="thumbnail">
-<a href="./posts/post-with-code/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/post-with-code/index.html"></a></p>
+<p><a href="./posts/post-with-code/index.html" class="no-external"></a></p><a href="./posts/post-with-code/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\post-with-code\index_files\figure-html\unnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/post-with-code/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code/index.html">
 <h3 class="no-anchor listing-title">
-Newton-Raphson’s method for Weibull distribution
+<a href="./posts/post-with-code/index.html" class="no-external">Newton-Raphson’s method for Weibull distribution</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -416,14 +445,12 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/post-with-code/index.html">
 <div class="listing-description">
-Let <span class="math inline">\(X_{i} \sim \mbox{Weibull}(\alpha, \beta)\)</span> then,
+<a href="./posts/post-with-code/index.html" class="no-external">Let <span class="math inline">\(X_{i} \sim \mbox{Weibull}(\alpha, \beta)\)</span> then,</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code/index.html">
+<a href="./posts/post-with-code/index.html" class="no-external">
 <div class="listing-date">
 Feb 25, 2023
 </div>
@@ -433,19 +460,19 @@ Wyara Moura
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="tests,latex,probability,inference" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1689528787439" data-listing-reading-time-sort="0.15">
+<div class="quarto-post image-right" data-index="6" data-categories="tests,latex,probability,inference" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1689528787439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
 <div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/board.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\welcome\board.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/welcome/index.html">
 <h3 class="no-anchor listing-title">
-Materials from Probability and Inference Courses
+<a href="./posts/welcome/index.html" class="no-external">Materials from Probability and Inference Courses</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/welcome/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tests'); return false;">
 tests
@@ -460,14 +487,12 @@ probability
 inference
 </div>
 </div>
-<a href="./posts/welcome/index.html">
 <div class="listing-description">
-Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)
+<a href="./posts/welcome/index.html" class="no-external">Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/welcome/index.html">
+<a href="./posts/welcome/index.html" class="no-external">
 <div class="listing-date">
 Feb 25, 2023
 </div>
@@ -509,9 +534,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -547,10 +586,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/wyaravms\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -560,8 +616,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -576,6 +641,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -613,28 +910,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/wyaravms\.github\.io\//);
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <script src="https://giscus.app/client.js" data-repo="wyaravms/wyaravms.github.io" data-repo-id="R_kgDOJCe7lg" data-category="General" data-category-id="DIC_kwDOJCe7ls4CcG7e" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Website made with <a href="https://quarto.org/">Quarto</a> by Wyara Moura, 2023. Hosted by <a href="https://pages.github.com/">GitHub Pages</a>.</div>   
+    <div class="nav-footer-left">
+<p>Website made with <a href="https://quarto.org/">Quarto</a> by Wyara Moura, 2023. Hosted by <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -665,6 +955,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
