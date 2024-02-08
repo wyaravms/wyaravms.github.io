@@ -1,6 +1,8 @@
 ---
 title: "Wyara Moura"
-format: html
+html: 
+    smooth-scroll: true
+    theme: cosmo
 editor: visual
 image-shape: round
 params:
