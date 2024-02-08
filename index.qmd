@@ -7,7 +7,7 @@ format:
     toc-depth: 6
     toc-location: right
 about:
-  template: trestles
+  template: solana
   image: profile2.jpg
   image-width: 12em
   image-shape: rounded
@@ -30,9 +30,7 @@ about:
 comments: false
 ---
 
-## Hello!
-
-I'm Wyara and welcome to my website! 
+Hello! I'm Wyara and welcome to my website! 
 
 I'm a statistician currently pursuing a Doctoral Degree in Statistics from the Graduate Program at UFMG. 
 
