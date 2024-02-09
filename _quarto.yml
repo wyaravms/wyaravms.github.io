@@ -11,7 +11,7 @@ website:
   site-url: https://wyaravms.github.io/
   navbar:
     #background: "#264663"
-    background: "#36516b"
+    background: "#3d556b"
     right:
       - href: index.qmd
         text: Home
