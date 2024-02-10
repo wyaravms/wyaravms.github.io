@@ -10,7 +10,7 @@ about:
   template: solana
   image: profile2.jpg
   image-width: 12em
-  image-shape: rounded
+  image-shape: round
   links:
     - icon: envelope
       text: Email
@@ -18,12 +18,12 @@ about:
     - icon: file
       text: Curriculum Lattes
       href: http://lattes.cnpq.br/5538303153427476
-    - icon: github
-      text: Github
-      href: https://github.com/wyaravms
     - icon: google scholar
       text: Google Scholar
       href: https://scholar.google.com/citations?user=2kt3OlEAAAAJ&hl=en
+    - icon: github
+      text: Github
+      href: https://github.com/wyaravms
     - icon: film
       text: Letterboxd
       href: https://letterboxd.com/wvmouras/
