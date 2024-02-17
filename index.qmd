@@ -30,8 +30,4 @@ about:
 comments: false
 ---
 
-Hi! Welcome to my website!
-
-I'm a statistician currently working towards a Doctoral Degree in Statistics at the Graduate Program at UFMG. Here, I'll be sharing notes, tests, codes, and more from my academic journey. 
-
-When I'm not studying, you can catch me enjoying coffee, watching films, or practicing karate as a proficient green belt. Osu!
+Hi! I'm a statistician and a PhD student in the Graduate Program in Statistics at UFMG. My life revolves around numbers, research, and a constant pursuit of knowledge. Beyond that, I'm passionate about coffee, a true enthusiast of cinema, and I also enjoy practicing karate, proudly holding my green belt.
