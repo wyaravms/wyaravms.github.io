@@ -26,7 +26,7 @@ about:
       href: https://github.com/wyaravms
     - icon: film
       text: Letterboxd
-      href: https://letterboxd.com/wvmouras/
+      href: https://letterboxd.com/wyaravms/
 comments: false
 ---
 
