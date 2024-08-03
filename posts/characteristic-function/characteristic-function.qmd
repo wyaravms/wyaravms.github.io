@@ -11,7 +11,6 @@ categories: [characteristic function, independence, probability, continuity theo
 ---
 
 ::: hidden
-
 ```{=tex}
 \usepackage{amsfonts}
 \usepackage{dsfont}
@@ -22,15 +21,13 @@ categories: [characteristic function, independence, probability, continuity theo
 
 # Question 5 - Chapter 9 (Resnick, 2005)
 
-Suppose $X_{n}$ and $Y_{n}$ are independent for each $n$ and 
-\begin{equation*}
+Suppose $X_{n}$ and $Y_{n}$ are independent for each $n$ and \begin{equation*}
 \begin{array}{lclllllll}
 X_{n} & \Rightarrow & X_{0}, \hspace{2ex} Y_{n} & \Rightarrow & Y_{0},
 \end{array}
 \end{equation*}
 
-Prove using characteristic functions that 
-\begin{equation*}
+Prove using characteristic functions that \begin{equation*}
 \begin{array}{lclllllll}
 X_{n} + Y_{n} & \Rightarrow & X_{0} + Y_{o}.
 \end{array}
@@ -38,43 +35,40 @@ X_{n} + Y_{n} & \Rightarrow & X_{0} + Y_{o}.
 
 ## Solution
 
-Assuming that $X_{n}$ and $Y_{n}$ are independent for each $n$ and 
-\begin{equation*}
+Assuming that $X_{n}$ and $Y_{n}$ are independent for each $n$ and \begin{equation*}
 \begin{array}{lclllllll}
 X_{n} & \Rightarrow & X_{0} \hspace{2ex} \mbox{and} \hspace{2ex} Y_{n} & \Rightarrow & Y_{0},
 \end{array}
 \end{equation*}
 
-Then, by the continuous mapping theorem (Corollary 8.3.1) we have that 
+Then, by the continuous mapping theorem (Corollary 8.3.1) we have that
 
 \begin{equation*}
 \begin{array}{lclllllll}
 e^{itX_{n}} & \Rightarrow & e^{itX_{0}} \hspace{2ex} \mbox{and} \hspace{2ex} e^{itY_{n}} & \Rightarrow & e^{itY_{0}}
 \end{array}
-\end{equation*}
-since for each $t$, the functions $e^{itX_{n}}$ and $e^{itY_{n}}$ are bounded continuous functions, that is, we have to
+\end{equation*} since for each $t$, the functions $e^{itX_{n}}$ and $e^{itY_{n}}$ are bounded continuous functions, that is, we have to
 
+```{=tex}
 \begin{equation*}
 \begin{array}{lclllllll}
 |e^{itX_{n}}| & \leq & 1 \hspace{2ex} \mbox{and} \hspace{2ex} |e^{itY_{n}}| & \leq & 1 
 \end{array}
 \end{equation*}
-
+```
 Thus, by the dominated convergence theorem, we obtain
 
 \begin{equation*}
 \begin{array}{lclllllll}
 \mathbb{E}(e^{itX_{n}}) & \xrightarrow[n \to \infty]{} & \mathbb{E}(e^{itX_{0}}) \hspace{2ex} \mbox{and} \hspace{2ex} \mathbb{E}(e^{itY_{n}}) & \xrightarrow[n \to \infty]{} & \mathbb{E}(e^{itY_{0}}) 
 \end{array}
-\end{equation*}
-that is,
+\end{equation*} that is,
 
 \begin{equation*}
 \begin{array}{lclllllll}
 \phi_{X_{n}}(t) & \xrightarrow[n \to \infty]{} & \phi_{X_{0}}(t) \hspace{2ex} \mbox{and} \hspace{2ex} \phi_{Y_{n}}(t) & \xrightarrow[n \to \infty]{} & \phi_{Y_{0}}(t)  
 \end{array}
-\end{equation*}
-for all $t\in\mathbb{R}$
+\end{equation*} for all $t\in\mathbb{R}$
 
 Where such an implication is part of the Continuity Theorem (Theorem 9.5.2, part (i)).
 
@@ -88,13 +82,11 @@ Now, if $X_{n}$ is independent of $Y_{n}$, for each $n$, so by property 7 of cha
 
 & = & \phi_{X_{n}}(t) \cdot \phi_{Y_{n}}(t) \\
 \end{array}
-\end{equation*}
-for each $t\in \mathbb{R}$.
+\end{equation*} for each $t\in \mathbb{R}$.
 
 In which, $\phi_{X_{n} + Y_{n}}(t)$ is the characteristic function of $X_{n} + Y_{n}$.
 
-Thus,
-\begin{equation*}
+Thus, \begin{equation*}
 \begin{array}{lclllllll}
 \lim\limits_{x \to \infty} \left[\phi_{X_{n}+Y_{n}}(t) \right] & = & \lim\limits_{x \to \infty} \left[\phi_{X_{n}}(t)\cdot\phi_{Y_{n}}(t) \right] \\ 
 \end{array}
@@ -107,37 +99,29 @@ and as seen previously, the limits of $\phi_{X_{n}}$ and $\phi_{Y_{n}}$ exist, s
 \lim\limits_{x \to \infty} \left[\phi_{X_{n}}(t) \cdot\phi_{Y_{n}}(t) \right] & = & \lim\limits_{x \to \infty} \phi_{X_{n}}(t)\cdot\lim\limits_{x \to \infty}\phi_{Y_{n}}(t) \\
 & = & \phi_{X_{0}}(t)\cdot\phi_{Y_{0}}(t), \\
 \end{array}
-\end{equation*}
-for all $t\in\mathbb{R}$.
+\end{equation*} for all $t\in\mathbb{R}$.
 
-So, if $X_{0}$ and $Y_{0}$ are independent, then we will have that by property 7 of the characteristic function
-\begin{equation*}
+So, if $X_{0}$ and $Y_{0}$ are independent, then we will have that by property 7 of the characteristic function \begin{equation*}
 \begin{array}{lclllllll}
 \phi_{X_{0}+Y_{0}}(t)
 & = & \phi_{X_{0}}(t)\cdot\phi_{Y_{0}}(t), \\
 \end{array}
-\end{equation*}
-for all $t\in\mathbb{R}$.
+\end{equation*} for all $t\in\mathbb{R}$.
 
-And then we have
-\begin{equation*}
+And then we have \begin{equation*}
 \begin{array}{lclllllll}
 \lim\limits_{x \to \infty} \left[\phi_{X_{n}+Y_{n}}(t) \right]  & = & \lim\limits_{x \to \infty} \left[\phi_{X_{n}}(t) \cdot\phi_{Y_{n}}(t) \right] \\
 & = & \phi_{X_{0}}(t)\cdot\phi_{Y_{0}}(t) \\
 & = & \phi_{X_{0}+Y_{0}}(t),
 \end{array}
-\end{equation*}
-for all $t\in\mathbb{R}$.
+\end{equation*} for all $t\in\mathbb{R}$.
 
 Thus, let $\phi_{X_{0}}(t)$ and $\phi_{Y_{0}}(t)$ continuous functions at $t=0$, then $\phi_{X_{n}}(t) \cdot\phi_{Y_{n}}(t) = \phi_{X_{0}+Y_{0}}(t)$ is continuous at $t=0$.
 
-In which, $\phi_{X_{0}+Y_{0}}(t)$ is the characteristic function of $X_{0}+Y_{0}$. Therefore, by the Continuity Theorem (Theorem 9.5.2, part (ii)), we will have that
-\begin{equation*}
+In which, $\phi_{X_{0}+Y_{0}}(t)$ is the characteristic function of $X_{0}+Y_{0}$. Therefore, by the Continuity Theorem (Theorem 9.5.2, part (ii)), we will have that \begin{equation*}
 \begin{array}{lclllllll}
 X_{n} + Y_{n} & \Rightarrow & X_{0} + Y_{0}, 
 \end{array}
-\end{equation*}
-as we wanted to demonstrate.
+\end{equation*} as we wanted to demonstrate.
 
 Note: "$\Rightarrow$" means convergence in distribution.
-

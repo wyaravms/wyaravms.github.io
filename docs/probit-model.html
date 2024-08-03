@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Wyara Moura">
+<meta name="dcterms.date" content="2024-08-03">
 
-<title>Wyara Moura - Blog Posts</title>
+<title>Wyara Moura - Probit Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -154,7 +125,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./home.html" aria-current="page"> 
+    <a class="nav-link" href="./home.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -185,326 +156,189 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog Posts</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Probit Model</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">bayesian statistics</div>
+                <div class="quarto-category">probability</div>
+                <div class="quarto-category">conditional probability</div>
+                <div class="quarto-category">probit</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Wyara Moura </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 3, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="brook's lemma">brook's lemma <span class="quarto-category-count">(1)</span></div><div class="category" data-category="central limit theorem">central limit theorem <span class="quarto-category-count">(1)</span></div><div class="category" data-category="characteristic function">characteristic function <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="continuity theorem">continuity theorem <span class="quarto-category-count">(1)</span></div><div class="category" data-category="estimator">estimator <span class="quarto-category-count">(1)</span></div><div class="category" data-category="expected value">expected value <span class="quarto-category-count">(1)</span></div><div class="category" data-category="independence">independence <span class="quarto-category-count">(1)</span></div><div class="category" data-category="inference">inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="latex">latex <span class="quarto-category-count">(1)</span></div><div class="category" data-category="linear regression">linear regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="poisson">poisson <span class="quarto-category-count">(1)</span></div><div class="category" data-category="probability">probability <span class="quarto-category-count">(5)</span></div><div class="category" data-category="quadratic forms">quadratic forms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="resnick">resnick <span class="quarto-category-count">(1)</span></div><div class="category" data-category="spatial statistics">spatial statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tests">tests <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modelo-probito-questão-em-português" id="toc-modelo-probito-questão-em-português" class="nav-link active" data-scroll-target="#modelo-probito-questão-em-português">Modelo Probito (Questão em português)</a>
+  <ul class="collapse">
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="characteristic function,independence,probability,continuity theorem,resnick" data-listing-date-sort="1704164400000" data-listing-file-modified-sort="1722686808802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395">
-<div class="thumbnail">
-<p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a></p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">Characteristic Function (Question)</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/characteristic-function/characteristic-function.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('characteristic function'); return false;">
-characteristic function
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('independence'); return false;">
-independence
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('continuity theorem'); return false;">
-continuity theorem
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resnick'); return false;">
-resnick
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">Suppose <span class="math inline">\(X_{n}\)</span> and <span class="math inline">\(Y_{n}\)</span> are independent for each <span class="math inline">\(n\)</span> and <span class="math display">\[\begin{equation*}
-\begin{array}{lclllllll}
-X_{n} &amp; \Rightarrow &amp; X_{0}, \hspace{2ex} Y_{n} &amp; \Rightarrow…</span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/characteristic-function/characteristic-function.html" class="no-external">
-<div class="listing-date">
-Jan 2, 2024
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="linear regression,quadratic forms,estimator" data-listing-date-sort="1703991600000" data-listing-file-modified-sort="1704034754290" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="653">
-<div class="thumbnail">
-<p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a></p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">Linear Regression (Question)</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/quadratic-form/quadratic-form.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('linear regression'); return false;">
-linear regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quadratic forms'); return false;">
-quadratic forms
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('estimator'); return false;">
-estimator
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">Let <span class="math inline">\(\mathbf{X} = (X_{1}, X_{2}, \cdots, X_{n})^{\top}\)</span> be a vector of independent and identically distributed random variables with <span class="math inline">\(\mathbb{E}(X_{i})=\mu\)</span> e <span class="math inline">\(\mathbb{V…</span><span class="math inline"></span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/quadratic-form/quadratic-form.html" class="no-external">
-<div class="listing-date">
-Dec 31, 2023
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="brook" s="" lemma,spatial="" statistics,probability'="" data-listing-date-sort="1689476400000" data-listing-file-modified-sort="1689529240109" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="653">
-
-<div class="thumbnail">
-<a href="./posts/brook-lemma/brook-lemma.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a>
-</div>
-
-<div class="body">
-
-<h3 class="no-anchor listing-title"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">Brook’s Lemma</a></h3>
-<div class="listing-subtitle"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external"></a></div>
-
- 
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('brook's lemma'); return false;">brook's lemma</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('spatial statistics'); return false;">spatial statistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">probability</div>
+<div class="hidden">
 
 </div>
- 
+<section id="modelo-probito-questão-em-português" class="level1">
+<h1>Modelo Probito (Questão em português)</h1>
+<p>Mostrar a equivalência dos seguintes modelos probitos e obter as distribuições condicionais completas para <span class="math inline">\(\beta\)</span> e <span class="math inline">\(u_{i}\)</span> assumindo uma priori normal para <span class="math inline">\(\beta\)</span>.</p>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<p>Dado o MLG Probito para variáveis binárias, <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+Y_{i} &amp; \sim &amp; \textrm{Ber}(\Phi(\textbf{X}_{i}\boldsymbol{\beta})) \\
+\end{array}
+\end{equation*}\]</span></p>
+<p>Em que para tornar o MCMC para este modelo mais eficiente, temos o modelo ‘aumentado’ com a inserção de uma variável auxiliar <span class="math inline">\(u\)</span>, dado por: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+u_{i} &amp; \sim &amp; \mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1) \\
+Y_{i} &amp; = &amp;
+\begin{cases}
+1, &amp; \text{se } u_{i} &gt; 0 \\
+0, &amp; \text{se } u_{i} \leq 0.
+\end{cases}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Iremos demonstrar a equivalência dos modelos com a variável auxiliar <span class="math inline">\(u_{i}\)</span> e do modelo sem a variável auxiliar <span class="math inline">\(u_{i}\)</span>. Observe que, a probabilidade marginal do modelo com a variável auxiliar, é dada por: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\mathbb{P}(Y_{i} = 1) &amp; = &amp; \mathbb{E}(Y_{i}) \; = \; \mathbb{E}_{u_{i}}[\mathbb{E}(Y_{i}\mid u_{i})] \; = \; \mathbb{E}_{u_{i}}[\mathbb{1}(u_{i} &gt; 0)] \\
+&amp; = &amp; \mathbb{P}(u_{i} &gt; 0) \\
+&amp; = &amp; 1 - \mathbb{P}(u_{i} \leq 0) \\
+&amp; = &amp; 1 - \mathbb{P}\left( Z_{i} \leq \dfrac{0 - \textbf{X}_{i}\boldsymbol{\beta}}{1} \right)\\
+&amp; = &amp; 1 - \Phi(- \textbf{X}_{i}\boldsymbol{\beta}) \\
+&amp; = &amp; 1 - \left[ 1 - \Phi(\textbf{X}_{i}\boldsymbol{\beta})\right] \\
+&amp; = &amp; \Phi(\textbf{X}_{i}\boldsymbol{\beta}) \\
+\end{array}
+\end{equation*}\]</span></p>
+<p>O que é equivalente ao modelo probito na estrutura padrão. Portanto, fica demonstrado que os dois modelos são equivalentes.</p>
+<p>Na segunda parte desta questão, a fim de encontrar as condicionais completas referentes os parâmetros desconhecido, precisamos completar o modelo. Assim, iremos atribuir uma priori normal para os <span class="math inline">\(\beta\)</span>’s, ou seja, <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(\boldsymbol{\beta}) &amp; \sim &amp; \mathcal{N}_{p}(\textbf{b}, \textbf{V} ) \\
+\end{array}
+\end{equation*}\]</span></p>
+<p>Portanto, o modelo ‘aumentado’ terá a seguinte estrutura hierárquica: <span class="math display">\[\begin{equation*}
+\begin{array}{lclll}
+Y_{i} &amp; = &amp;
+\begin{cases}
+1, &amp; \text{se } u_{i} &gt; 0 \\
+0, &amp; \text{se } u_{i} \leq 0. \\
+\end{cases} \\
+u_{i}\mid \boldsymbol{\beta} &amp; \sim &amp; \mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1) \\
+\boldsymbol{\beta} &amp; \sim &amp; \mathcal{N}_{p}(\textbf{b}, \textbf{V} )
+\end{array}
+\end{equation*}\]</span></p>
+<p>Assim, podemos encontrar a distribuição conjunta a posteriori para os parâmetros, a qual é dada por: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(\boldsymbol{\beta}, \textbf{u}\mid\textbf{Y}) &amp; \propto &amp;  \pi(\boldsymbol{\beta}, \textbf{u},\textbf{Y})\\
+&amp; \propto &amp;  \pi(\textbf{Y}\mid\boldsymbol{\beta}, \textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\
+&amp; \propto &amp;  \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\
+\end{array}
+\end{equation*}\]</span></p>
+<p>Começando pela análise do produto das distribuições: <span class="math inline">\(\pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\)</span>, temos: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta}) &amp; = &amp;  \displaystyle\prod_{i=1}^{n}[\pi(Y_{i}\mid u_{i})\pi(u_{i}\mid\boldsymbol{\beta})]\\[12pt]
 
-<div class="delink listing-description"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">Suppose <span class="math inline">\(Y_{1}\)</span> and <span class="math inline">\(Y_{2}\)</span> are both binary variables, and that their joint distribution is defined through conditional logit models. That is,</a></div>
+&amp; = &amp;  \displaystyle\prod_{i=1}^{n} [ \mathbb{1}(Y_{i} = 1)\mathbb{1}(u_{i} &gt; 0) + \mathbb{1}(Y_{i} = 0)\mathbb{1}(u_{i} \leq 0) ] \times \\[10pt]
 
-</div>
-<div class="metadata"><a href="./posts/brook-lemma/brook-lemma.html" class="no-external">
-<div class="listing-date">`Jul 16, 2023`{=html}</div>
-<div class="listing-author">Wyara Moura</div>
+&amp;  &amp; \times \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\\[10pt]
+&amp; = &amp;  \displaystyle\prod_{i=1}^{n} \left[ \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 1)\mathbb{1}(u_{i} &gt; 0) \right. + \\[10pt]
+&amp; &amp; + \left. \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 0)\mathbb{1}(u_{i} \leq 0) \right] \\
+\end{array}
+\end{equation*}\]</span></p>
+<p>Logo, a distribuição conjunta a posteriori para os parâmetros, é dada por: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(\boldsymbol{\beta}, \textbf{u}\mid\textbf{Y}) &amp; \propto &amp;  \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\[10pt]
+&amp; \propto &amp;  \displaystyle\prod_{i=1}^{n} \left[ \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 1)\mathbb{1}(u_{i} &gt; 0) \right. + \\[12pt]
+&amp; &amp; + \left. \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 0)\mathbb{1}(u_{i} \leq 0) \right] \times\\[12pt]
+&amp; &amp; \times \exp{\left\{-\dfrac{1}{2}(\boldsymbol{\beta} - \textbf{b})^{\top}\textbf{V}^{-1}(\boldsymbol{\beta} - \textbf{b})\right\}}
+\end{array}
+\end{equation*}\]</span></p>
+<p>Agora, podemos encontrar as distribuições condicionais completas para <span class="math inline">\(\boldsymbol{\beta}\)</span> e <span class="math inline">\(u_{i}\)</span>, para <span class="math inline">\(i = \{1, \cdots, n\}\)</span>, a partir da distribuição conjunta a posteriori. Tais distribuições são dadas por:</p>
+<p>Para <span class="math inline">\(u_{i}\)</span>: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) &amp; \propto &amp;  [\pi(Y_{i}\mid u_{i})\pi(u_{i}\mid\boldsymbol{\beta})]\pi(\boldsymbol{\beta})\\[8pt]
+&amp; \propto &amp;  \left[ \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 1)\mathbb{1}(u_{i} &gt; 0) \right. + \\[8pt]
+&amp; &amp; + \left. \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 0)\mathbb{1}(u_{i} \leq 0) \right] \\[8pt]
 
-</a></div>
+&amp; \propto &amp;
+\begin{cases}
+\mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1)\mathbb{1}(u_{i} &gt; 0) , &amp; \text{se } Y_{i} = 1 \\
+\mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1)\mathbb{1}(u_{i} \leq 0), &amp; \text{se } Y_{i} = 0. \\
+\end{cases} \\[5pt]
+\end{array}
+\end{equation*}\]</span></p>
+<p>Para <span class="math inline">\(\boldsymbol{\beta}\)</span>: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(\boldsymbol{\beta}\mid\textbf{u}, \textbf{Y},\textbf{X}) &amp; \propto &amp;  \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\[5pt]
+&amp; \propto &amp; \exp{\left\{-\dfrac{1}{2}(\textbf{u} - \textbf{X}\boldsymbol{\beta})^{\top}(\textbf{u} - \textbf{X}\boldsymbol{\beta})\right\}} \cdot \exp{\left\{-\dfrac{1}{2}(\boldsymbol{\beta} - \textbf{b})^{\top}\textbf{V}^{-1}(\boldsymbol{\beta} - \textbf{b})\right\}} \\[8pt]
 
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="probability,tests,expected value" data-listing-date-sort="1677726000000" data-listing-file-modified-sort="1689527027541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="762">
-<div class="thumbnail">
-<p><a href="./posts/summer/prova-um.html" class="no-external"></a></p><a href="./posts/summer/prova-um.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/summer/prova-um.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/summer/prova-um.html" class="no-external">Summer 2023</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/summer/prova-um.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('tests'); return false;">
-tests
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('expected value'); return false;">
-expected value
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/summer/prova-um.html" class="no-external">This summer, I attended ‘The Summer Program in Mathematics, UFMG 2023’ and I took the Introduction of Probability Theory course, below you can find the first test of the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/summer/prova-um.html" class="no-external">
-<div class="listing-date">
-Mar 2, 2023
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="probability,central limit theorem,poisson" data-listing-date-sort="1677639600000" data-listing-file-modified-sort="1689527031323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104">
-<div class="thumbnail">
-<p><a href="./posts/central limit theorem/question-poisson.html" class="no-external"></a></p><a href="./posts/central limit theorem/question-poisson.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/central limit theorem/question-poisson.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Central Limit Theorem (Question)</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Application of the central limit theorem involving Poisson distribution.</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('central limit theorem'); return false;">
-central limit theorem
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('poisson'); return false;">
-poisson
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/central limit theorem/question-poisson.html" class="no-external">Use the central limit theorem to verify that,</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/central limit theorem/question-poisson.html" class="no-external">
-<div class="listing-date">
-Mar 1, 2023
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="R,code,analysis" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1708087372065" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="429">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html" class="no-external"></a></p><a href="./posts/post-with-code/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\post-with-code\index_files\figure-html\unnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/post-with-code/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/post-with-code/index.html" class="no-external">Newton-Raphson’s method for Weibull distribution</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/post-with-code/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/post-with-code/index.html" class="no-external">Let <span class="math inline">\(X_{i} \sim \mbox{Weibull}(\alpha, \beta)\)</span> then,</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Feb 25, 2023
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="tests,latex,probability,inference" data-listing-date-sort="1677294000000" data-listing-file-modified-sort="1689528787439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
-<p class="card-img-top"><img src="posts\welcome\board.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Materials from Probability and Inference Courses</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('tests'); return false;">
-tests
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('latex'); return false;">
-latex
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('probability'); return false;">
-probability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('inference'); return false;">
-inference
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/welcome/index.html" class="no-external">Some materials from the isolated courses that I took last year in the master program of statistics at UFMG. (All pdf materials are in portuguese.)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Feb 25, 2023
-</div>
-<div class="listing-author">
-Wyara Moura
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+&amp; \propto &amp; \exp{\left\{-\dfrac{1}{2}\left(\textbf{u}^{\top}\textbf{u} - \textbf{u}^{\top}\textbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{u} + \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{X}\boldsymbol{\beta} + \right. \right.}\\[8pt]
+&amp; &amp; \left. \left. + \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\textbf{b} - \textbf{b}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} + \textbf{b}^{\top}\textbf{V}^{-1}\textbf{b}\right) \right\} \\[8pt]
+\end{array}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+
+&amp; \propto &amp; \exp{\left\{-\dfrac{1}{2}\left(\boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{X}\boldsymbol{\beta} + \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{u} -  \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\textbf{b}\right)\right\}}\\[8pt]
+
+&amp; \propto &amp; \exp{\left\{-\dfrac{1}{2}\left[\boldsymbol{\beta}^{\top} \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right) \boldsymbol{\beta} - \boldsymbol{\beta}^{\top} \left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b} \right)\right]\right.}\\[9pt]
+
+&amp; &amp; \left. \left. - (\textbf{u}^{\top}\textbf{X} + \textbf{b}^{\top}\textbf{V}^{-1})\boldsymbol{\beta} \right] \right\} \\[8pt]
+
+&amp; \propto &amp; \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]\\[9pt]
+\end{array}
+\end{equation*}\]</span></p>
+<p>Portanto, as distribuições condicionais completas para <span class="math inline">\(\beta\)</span> e <span class="math inline">\(u_{i}\)</span>, para <span class="math inline">\(i = \{1, \cdots, n\}\)</span> são dadas por: <span class="math display">\[\begin{equation*}
+\begin{array}{rclll}
+\pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) &amp; \sim &amp;
+\begin{cases}
+\mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1)\mathbb{1}(u_{i} &gt; 0) , &amp; \text{se } Y_{i} = 1 \\
+\mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1)\mathbb{1}(u_{i} \leq 0), &amp; \text{se } Y_{i} = 0. \\
+\end{cases} \\[16pt]
+
+\pi(\boldsymbol{\beta}\mid\textbf{u}, \textbf{Y},\textbf{X}) &amp; \sim &amp; \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]
+\end{array}
+\end{equation*}\]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
