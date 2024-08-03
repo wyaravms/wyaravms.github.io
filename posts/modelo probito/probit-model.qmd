@@ -20,19 +20,18 @@ categories: [bayesian statistics, probability, conditional probability, probit]
 :::
 
 # Modelo Probito (Questão em português)
+
 Mostrar a equivalência dos seguintes modelos probitos e obter as distribuições condicionais completas para $\beta$ e $u_{i}$ assumindo uma priori normal para $\beta$.
 
 ## Solution
 
-Dado o MLG Probito para variáveis binárias,
-\begin{equation*}
+Dado o MLG Probito para variáveis binárias, \begin{equation*}
 \begin{array}{rclll}
 Y_{i} & \sim & \textrm{Ber}(\Phi(\textbf{X}_{i}\boldsymbol{\beta})) \\
 \end{array}
 \end{equation*}
 
-Em que para tornar o MCMC para este modelo mais eficiente, temos o modelo 'aumentado' com a inserção de uma variável auxiliar $u$, dado por:
-\begin{equation*}
+Em que para tornar o MCMC para este modelo mais eficiente, temos o modelo 'aumentado' com a inserção de uma variável auxiliar $u$, dado por: \begin{equation*}
 \begin{array}{rclll}
 u_{i} & \sim & \mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1) \\
 Y_{i} & = & 
@@ -43,8 +42,7 @@ Y_{i} & = &
 \end{array}
 \end{equation*}
 
-Iremos demonstrar a equivalência dos modelos com a variável auxiliar $u_{i}$ e do modelo sem a variável auxiliar $u_{i}$. Observe que, a probabilidade marginal do modelo com a variável auxiliar, é dada por:
-\begin{equation*}
+Iremos demonstrar a equivalência dos modelos com a variável auxiliar $u_{i}$ e do modelo sem a variável auxiliar $u_{i}$. Observe que, a probabilidade marginal do modelo com a variável auxiliar, é dada por: \begin{equation*}
 \begin{array}{rclll}
 \mathbb{P}(Y_{i} = 1) & = & \mathbb{E}(Y_{i}) \; = \; \mathbb{E}_{u_{i}}[\mathbb{E}(Y_{i}\mid u_{i})] \; = \; \mathbb{E}_{u_{i}}[\mathbb{1}(u_{i} > 0)] \\
 & = & \mathbb{P}(u_{i} > 0) \\
@@ -58,15 +56,13 @@ Iremos demonstrar a equivalência dos modelos com a variável auxiliar $u_{i}$ e
 
 O que é equivalente ao modelo probito na estrutura padrão. Portanto, fica demonstrado que os dois modelos são equivalentes.
 
-Na segunda parte desta questão, a fim de encontrar as condicionais completas referentes os parâmetros desconhecido, precisamos completar o modelo. Assim, iremos atribuir uma priori normal para os $\beta$'s, ou seja,
-\begin{equation*}
+Na segunda parte desta questão, a fim de encontrar as condicionais completas referentes os parâmetros desconhecido, precisamos completar o modelo. Assim, iremos atribuir uma priori normal para os $\beta$'s, ou seja, \begin{equation*}
 \begin{array}{rclll}
 \pi(\boldsymbol{\beta}) & \sim & \mathcal{N}_{p}(\textbf{b}, \textbf{V} ) \\
 \end{array}
 \end{equation*}
 
-Portanto, o modelo 'aumentado' terá a seguinte estrutura hierárquica:
-\begin{equation*}
+Portanto, o modelo 'aumentado' terá a seguinte estrutura hierárquica: \begin{equation*}
 \begin{array}{lclll}
 Y_{i} & = & 
 \begin{cases}
@@ -78,8 +74,7 @@ u_{i}\mid \boldsymbol{\beta} & \sim & \mathcal{N}(\textbf{X}_{i}\boldsymbol{\bet
 \end{array}
 \end{equation*}
 
-Assim, podemos encontrar a distribuição conjunta a posteriori para os parâmetros, a qual é dada por:
-\begin{equation*}
+Assim, podemos encontrar a distribuição conjunta a posteriori para os parâmetros, a qual é dada por: \begin{equation*}
 \begin{array}{rclll}
 \pi(\boldsymbol{\beta}, \textbf{u}\mid\textbf{Y}) & \propto &  \pi(\boldsymbol{\beta}, \textbf{u},\textbf{Y})\\
  & \propto &  \pi(\textbf{Y}\mid\boldsymbol{\beta}, \textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\
@@ -87,8 +82,7 @@ Assim, podemos encontrar a distribuição conjunta a posteriori para os parâmet
 \end{array}
 \end{equation*}
 
-Começando pela análise do produto das distribuições: $\pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})$, temos:
-\begin{equation*}
+Começando pela análise do produto das distribuições: $\pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})$, temos: \begin{equation*}
 \begin{array}{rclll}
 \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta}) & = &  \displaystyle\prod_{i=1}^{n}[\pi(Y_{i}\mid u_{i})\pi(u_{i}\mid\boldsymbol{\beta})]\\[12pt]
 
@@ -101,8 +95,7 @@ Começando pela análise do produto das distribuições: $\pi(\textbf{Y}\mid\tex
 \end{array}
 \end{equation*}
 
-Logo, a distribuição conjunta a posteriori para os parâmetros, é dada por:
-\begin{equation*}
+Logo, a distribuição conjunta a posteriori para os parâmetros, é dada por: \begin{equation*}
 \begin{array}{rclll}
 \pi(\boldsymbol{\beta}, \textbf{u}\mid\textbf{Y}) & \propto &  \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\[10pt]
 & \propto &  \displaystyle\prod_{i=1}^{n} \left[ \dfrac{1}{\sqrt{2\pi}}\exp{\left\{-\dfrac{1}{2}(u_{i} - \textbf{X}_{i}\boldsymbol{\beta})^2\right\}}\mathbb{1}(Y_{i} = 1)\mathbb{1}(u_{i} > 0) \right. + \\[12pt]
@@ -113,8 +106,7 @@ Logo, a distribuição conjunta a posteriori para os parâmetros, é dada por:
 
 Agora, podemos encontrar as distribuições condicionais completas para $\boldsymbol{\beta}$ e $u_{i}$, para $i = \{1, \cdots, n\}$, a partir da distribuição conjunta a posteriori. Tais distribuições são dadas por:
 
-Para $u_{i}$:
-\begin{equation*}
+Para $u_{i}$: \begin{equation*}
 \begin{array}{rclll}
 \pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) & \propto &  [\pi(Y_{i}\mid u_{i})\pi(u_{i}\mid\boldsymbol{\beta})]\pi(\boldsymbol{\beta})\\[8pt]
  
@@ -127,10 +119,9 @@ Para $u_{i}$:
 \mathcal{N}(\textbf{X}_{i}\boldsymbol{\beta}, 1)\mathbb{1}(u_{i} \leq 0), & \text{se } Y_{i} = 0. \\
 \end{cases} \\[5pt]
 \end{array}
-\end{equation*} 
+\end{equation*}
 
-Para $\boldsymbol{\beta}$:
-\begin{equation*}
+Para $\boldsymbol{\beta}$: \begin{equation*}
 \begin{array}{rclll}
 \pi(\boldsymbol{\beta}\mid\textbf{u}, \textbf{Y},\textbf{X}) & \propto &  \pi(\textbf{Y}\mid\textbf{u})\pi( \textbf{u}\mid\boldsymbol{\beta})\pi(\boldsymbol{\beta})\\[5pt]
  
@@ -139,8 +130,9 @@ Para $\boldsymbol{\beta}$:
 & \propto & \exp{\left\{-\dfrac{1}{2}\left(\textbf{u}^{\top}\textbf{u} - \textbf{u}^{\top}\textbf{X}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{u} + \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{X}\boldsymbol{\beta} + \right. \right.}\\[8pt]
 & & \left. \left. + \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\textbf{b} - \textbf{b}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} + \textbf{b}^{\top}\textbf{V}^{-1}\textbf{b}\right) \right\} \\[8pt]
 \end{array}
-\end{equation*} 
+\end{equation*}
 
+```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 
@@ -152,10 +144,9 @@ Para $\boldsymbol{\beta}$:
 
 & \propto & \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]\\[9pt]
 \end{array}
-\end{equation*} 
-
-Portanto, as distribuições condicionais completas para $\beta$ e $u_{i}$, para $i = \{1, \cdots, n\}$ são dadas por:
-\begin{equation*}
+\end{equation*}
+```
+Portanto, as distribuições condicionais completas para $\beta$ e $u_{i}$, para $i = \{1, \cdots, n\}$ são dadas por: \begin{equation*}
 \begin{array}{rclll}
 \pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) & \sim &
 \begin{cases}
@@ -165,5 +156,4 @@ Portanto, as distribuições condicionais completas para $\beta$ e $u_{i}$, para
 
 \pi(\boldsymbol{\beta}\mid\textbf{u}, \textbf{Y},\textbf{X}) & \sim & \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]
 \end{array}
-\end{equation*} 
-
+\end{equation*}
