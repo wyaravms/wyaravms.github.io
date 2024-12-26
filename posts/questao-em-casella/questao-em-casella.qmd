@@ -319,7 +319,7 @@ beta
 tau
 ```
 
-### Referências
+# Referências
 
 \noindent
 CASELLA, G.; BERGER, R. L. Statistical Inference. 2. ed. Pacific Grove, CA: Duxbury Press, 2002. 
