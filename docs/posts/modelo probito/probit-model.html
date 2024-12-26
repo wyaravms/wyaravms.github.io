@@ -198,7 +198,7 @@ window.Quarto = {
   <ul>
   <li><a href="#modelo-probito-questão-em-português" id="toc-modelo-probito-questão-em-português" class="nav-link active" data-scroll-target="#modelo-probito-questão-em-português">Modelo Probito (Questão em português)</a>
   <ul class="collapse">
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#solução" id="toc-solução" class="nav-link" data-scroll-target="#solução">Solução</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -216,8 +216,8 @@ window.Quarto = {
 <section id="modelo-probito-questão-em-português" class="level1">
 <h1>Modelo Probito (Questão em português)</h1>
 <p>Mostrar a equivalência dos seguintes modelos probitos e obter as distribuições condicionais completas para <span class="math inline">\(\beta\)</span> e <span class="math inline">\(u_{i}\)</span> assumindo uma priori normal para <span class="math inline">\(\beta\)</span>.</p>
-<section id="solution" class="level2">
-<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<section id="solução" class="level2">
+<h2 class="anchored" data-anchor-id="solução">Solução</h2>
 <p>Dado o MLG Probito para variáveis binárias, <span class="math display">\[\begin{equation*}
 \begin{array}{rclll}
 Y_{i} &amp; \sim &amp; \textrm{Ber}(\Phi(\textbf{X}_{i}\boldsymbol{\beta})) \\
@@ -310,7 +310,7 @@ u_{i}\mid \boldsymbol{\beta} &amp; \sim &amp; \mathcal{N}(\textbf{X}_{i}\boldsym
 &amp; &amp; \left. \left. + \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\textbf{b} - \textbf{b}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} + \textbf{b}^{\top}\textbf{V}^{-1}\textbf{b}\right) \right\} \\[8pt]
 \end{array}
 \end{equation*}\]</span></p>
-<span class="math display">\[\begin{equation*}
+<p><span class="math display">\[\begin{equation*}
 \begin{array}{rclll}
 
 &amp; \propto &amp; \exp{\left\{-\dfrac{1}{2}\left(\boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{X}\boldsymbol{\beta} + \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\boldsymbol{\beta} - \boldsymbol{\beta}^{\top}\textbf{X}^{\top}\textbf{u} -  \boldsymbol{\beta}^{\top}\textbf{V}^{-1}\textbf{b}\right)\right\}}\\[8pt]
@@ -321,7 +321,7 @@ u_{i}\mid \boldsymbol{\beta} &amp; \sim &amp; \mathcal{N}(\textbf{X}_{i}\boldsym
 
 &amp; \propto &amp; \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]\\[9pt]
 \end{array}
-\end{equation*}\]</span>
+\end{equation*}\]</span></p>
 <p>Portanto, as distribuições condicionais completas para <span class="math inline">\(\beta\)</span> e <span class="math inline">\(u_{i}\)</span>, para <span class="math inline">\(i = \{1, \cdots, n\}\)</span> são dadas por: <span class="math display">\[\begin{equation*}
 \begin{array}{rclll}
 \pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) &amp; \sim &amp;

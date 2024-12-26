@@ -11,19 +11,17 @@ categories: [bayesian statistics, probability, conditional probability, probit]
 ---
 
 ::: hidden
-```{=tex}
 \usepackage{amsfonts}
 \usepackage{dsfont}
 \renewcommand{\baselinestretch}{1.2}
 \renewcommand{\arraystretch}{1.2}
-```
 :::
 
 # Modelo Probito (Questão em português)
 
 Mostrar a equivalência dos seguintes modelos probitos e obter as distribuições condicionais completas para $\beta$ e $u_{i}$ assumindo uma priori normal para $\beta$.
 
-## Solution
+## Solução
 
 Dado o MLG Probito para variáveis binárias, \begin{equation*}
 \begin{array}{rclll}
@@ -132,7 +130,6 @@ Para $\boldsymbol{\beta}$: \begin{equation*}
 \end{array}
 \end{equation*}
 
-```{=tex}
 \begin{equation*}
 \begin{array}{rclll}
 
@@ -145,7 +142,7 @@ Para $\boldsymbol{\beta}$: \begin{equation*}
 & \propto & \mathcal{N}_{p}\left[\left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1}\left( \textbf{X}^{\top}\textbf{u} +  \textbf{V}^{-1}\textbf{b}\right), \left( \textbf{X}^{\top}\textbf{X} + \textbf{V}^{-1} \right)^{-1} \right]\\[9pt]
 \end{array}
 \end{equation*}
-```
+
 Portanto, as distribuições condicionais completas para $\beta$ e $u_{i}$, para $i = \{1, \cdots, n\}$ são dadas por: \begin{equation*}
 \begin{array}{rclll}
 \pi(u_{i}\mid\boldsymbol{\beta}, Y_{i},\textbf{X}_{i}) & \sim &

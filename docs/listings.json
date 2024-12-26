@@ -9,6 +9,7 @@
   {
     "listing": "/home.html",
     "items": [
+      "/posts/questao-em-casella/questao-em-casella.html",
       "/posts/modelo probito/probit-model.html",
       "/posts/characteristic-function/characteristic-function.html",
       "/posts/quadratic-form/quadratic-form.html",
